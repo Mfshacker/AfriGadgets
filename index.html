@@ -6,120 +6,76 @@
 
     <title>AfriGadgets | Gadgets, Electronics & Power Solutions</title>
 
-    <meta name="description"
-          content="Shop gadgets, electronics, smartphones, TVs, solar products, generators and more at AfriGadgets.">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     PROMO BAR
-===================================================== -->
+<!-- ================= PROMO BAR ================= -->
 
 <div class="promo-bar">
-
     <div class="promo-track">
+        <span><i class="fa-solid fa-truck"></i> Fast & Reliable Delivery</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Quality Products</span>
+        <span><i class="fa-solid fa-credit-card"></i> Secure Payments</span>
+        <span><i class="fa-solid fa-headset"></i> Customer Support</span>
+        <span><i class="fa-solid fa-bolt"></i> Great Deals Every Day</span>
 
-        <span>
-            <i class="fa-solid fa-truck"></i>
-            Nationwide delivery available
-        </span>
-
-        <span>
-            <i class="fa-solid fa-shield-halved"></i>
-            Quality products
-        </span>
-
-        <span>
-            <i class="fa-solid fa-headset"></i>
-            Customer support available
-        </span>
-
-        <span>
-            <i class="fa-solid fa-bolt"></i>
-            Gadgets • Electronics • Power Solutions
-        </span>
-
-        <span>
-            <i class="fa-solid fa-truck"></i>
-            Nationwide delivery available
-        </span>
-
-        <span>
-            <i class="fa-solid fa-shield-halved"></i>
-            Quality products
-        </span>
-
+        <!-- Duplicate for continuous animation -->
+        <span><i class="fa-solid fa-truck"></i> Fast & Reliable Delivery</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Quality Products</span>
+        <span><i class="fa-solid fa-credit-card"></i> Secure Payments</span>
+        <span><i class="fa-solid fa-headset"></i> Customer Support</span>
     </div>
-
 </div>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
     <div class="container header-content">
 
-        <!-- LOGO -->
-
         <a href="index.html" class="logo">
             Afri<span>Gadgets</span>
         </a>
-
-
-        <!-- SEARCH -->
 
         <form class="search-box" id="searchForm">
 
             <input
                 type="search"
                 id="searchInput"
-                placeholder="Search for products..."
+                placeholder="Search products..."
                 autocomplete="off"
             >
 
             <button type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-search"></i>
             </button>
 
         </form>
 
-
-        <!-- HEADER ACTIONS -->
-
         <div class="header-actions">
 
-            <a href="contact.html" class="header-action">
-
+            <a href="about.html" class="header-action">
                 <i class="fa-regular fa-user"></i>
-
                 <span>Account</span>
-
             </a>
 
-
-            <a href="cart.html"
-               class="header-action cart-button">
+            <a href="cart.html" class="header-action cart-button">
 
                 <i class="fa-solid fa-cart-shopping"></i>
 
-                <span>Cart</span>
-
                 <b id="cartCount">0</b>
+
+                <span>Cart</span>
 
             </a>
 
@@ -130,111 +86,64 @@
 </header>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav class="navigation">
 
     <div class="container nav-content">
 
-        <!-- SHOP ALL -->
+        <div class="nav-dropdown">
 
-        <div class="nav-dropdown shop-all-wrapper">
-
-            <a href="shop.html"
-               class="dropdown-trigger">
-
+            <a href="shop.html" class="dropdown-trigger">
                 Shop All
-
                 <i class="fa-solid fa-chevron-down"></i>
-
             </a>
-
 
             <div class="dropdown-menu">
 
-                <a href="shop.html?category=smartphones">
-
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-
-                    Smartphones
-
+                <a href="shop.html?category=phones">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    Cellphones
                 </a>
 
                 <a href="shop.html?category=electronics">
-
                     <i class="fa-solid fa-tv"></i>
-
                     Electronics
-
                 </a>
 
                 <a href="shop.html?category=power">
-
                     <i class="fa-solid fa-bolt"></i>
-
                     Power Solutions
-
                 </a>
 
                 <a href="shop.html?category=solar">
-
                     <i class="fa-solid fa-sun"></i>
-
                     Solar
-
                 </a>
 
-                <a href="shop.html?category=home">
-
-                    <i class="fa-solid fa-house"></i>
-
-                    Home Appliances
-
+                <a href="shop.html?category=fridges">
+                    <i class="fa-solid fa-snowflake"></i>
+                    Fridges
                 </a>
 
-                <a href="shop.html?category=accessories">
-
-                    <i class="fa-solid fa-headphones"></i>
-
-                    Accessories
-
+                <a href="shop.html?category=gadgets">
+                    <i class="fa-solid fa-microchip"></i>
+                    Gadgets
                 </a>
 
             </div>
 
         </div>
 
-
         <a href="shop.html">Shop</a>
+        <a href="shop.html?category=phones">Cellphones</a>
+        <a href="shop.html?category=electronics">Electronics</a>
+        <a href="shop.html?category=power">Generators</a>
+        <a href="shop.html?category=solar">Solar</a>
+        <a href="faq.html">FAQ</a>
 
-        <a href="shop.html?category=smartphones">
-            Smartphones
-        </a>
-
-        <a href="shop.html?category=electronics">
-            Electronics
-        </a>
-
-        <a href="shop.html?category=solar">
-            Solar
-        </a>
-
-        <a href="shop.html?category=power">
-            Power Solutions
-        </a>
-
-        <a href="shop.html?category=home">
-            Home Appliances
-        </a>
-
-        <a href="faq.html">
-            FAQ
-        </a>
-
-        <a href="contact.html">
-            Contact
+        <a href="shop.html" class="deals-link">
+            Deals
         </a>
 
     </div>
@@ -242,12 +151,9 @@
 </nav>
 
 
+<!-- ================= HERO ================= -->
+
 <main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <section class="hero">
 
@@ -256,39 +162,28 @@
         <div class="hero-text">
 
             <span class="hero-label">
-                AFRIGADGETS
+                AFRIGADGETS ONLINE STORE
             </span>
 
-
             <h1>
-                Technology
-                <span>for everyday life.</span>
+                Technology<br>
+                <span>Made Simple.</span>
             </h1>
 
-
             <p>
-                Discover smartphones, electronics, power solutions,
-                solar products and everyday gadgets at AfriGadgets.
+                Discover quality gadgets, electronics, power solutions
+                and everyday technology at AfriGadgets.
             </p>
-
 
             <div class="hero-buttons">
 
-                <a href="shop.html"
-                   class="btn btn-primary">
-
+                <a href="shop.html" class="btn btn-primary">
                     Shop Now
-
                     <i class="fa-solid fa-arrow-right"></i>
-
                 </a>
 
-
-                <a href="about.html"
-                   class="btn btn-secondary">
-
+                <a href="about.html" class="btn btn-secondary">
                     Learn More
-
                 </a>
 
             </div>
@@ -302,43 +197,31 @@
 
             <div class="hero-circle"></div>
 
-
             <div class="hero-image-grid">
 
-                <a href="shop.html?category=smartphones"
-                   class="hero-image-card">
-
+                <div class="hero-image-card">
                     <img
-                        src="images/hero-1.jpg"
+                        src="images/hero-phone.jpg"
                         alt="Smartphone"
                         onerror="this.style.display='none'"
                     >
+                </div>
 
-                </a>
-
-
-                <a href="shop.html?category=electronics"
-                   class="hero-image-card">
-
+                <div class="hero-image-card">
                     <img
-                        src="images/hero-2.jpg"
-                        alt="Electronics"
+                        src="images/hero-gadget.jpg"
+                        alt="Gadget"
                         onerror="this.style.display='none'"
                     >
+                </div>
 
-                </a>
-
-
-                <a href="shop.html?category=power"
-                   class="hero-image-card">
-
+                <div class="hero-image-card">
                     <img
-                        src="images/hero-3.jpg"
-                        alt="Power solutions"
+                        src="images/hero-power.jpg"
+                        alt="Power solution"
                         onerror="this.style.display='none'"
                     >
-
-                </a>
+                </div>
 
             </div>
 
@@ -349,29 +232,19 @@
 </section>
 
 
-<!-- =====================================================
-     FEATURES
-===================================================== -->
+<!-- ================= FEATURES ================= -->
 
 <section class="features">
 
     <div class="container features-grid">
 
-
         <div class="feature">
 
-            <i class="fa-solid fa-truck"></i>
+            <i class="fa-solid fa-truck-fast"></i>
 
             <div>
-
-                <h3>
-                    Nationwide Delivery
-                </h3>
-
-                <p>
-                    We deliver across South Africa
-                </p>
-
+                <h3>Reliable Delivery</h3>
+                <p>We deliver straight to you.</p>
             </div>
 
         </div>
@@ -382,34 +255,8 @@
             <i class="fa-solid fa-shield-halved"></i>
 
             <div>
-
-                <h3>
-                    Quality Products
-                </h3>
-
-                <p>
-                    Products selected with care
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <i class="fa-solid fa-headset"></i>
-
-            <div>
-
-                <h3>
-                    Customer Support
-                </h3>
-
-                <p>
-                    We're here to help
-                </p>
-
+                <h3>Quality Products</h3>
+                <p>Products selected with care.</p>
             </div>
 
         </div>
@@ -420,15 +267,20 @@
             <i class="fa-solid fa-lock"></i>
 
             <div>
+                <h3>Secure Checkout</h3>
+                <p>Your order information is protected.</p>
+            </div>
 
-                <h3>
-                    Secure Ordering
-                </h3>
+        </div>
 
-                <p>
-                    Safe and simple checkout
-                </p>
 
+        <div class="feature">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <div>
+                <h3>Customer Support</h3>
+                <p>We're here when you need us.</p>
             </div>
 
         </div>
@@ -438,9 +290,7 @@
 </section>
 
 
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
+<!-- ================= CATEGORIES ================= -->
 
 <section class="section">
 
@@ -449,20 +299,12 @@
         <div class="section-heading">
 
             <div>
-
-                <span class="section-label">
-                    SHOP BY CATEGORY
-                </span>
-
-                <h2>
-                    Find what you need
-                </h2>
-
+                <span class="section-label">SHOP BY CATEGORY</span>
+                <h2>Find What You Need</h2>
             </div>
 
             <a href="shop.html">
-                View All
-                <i class="fa-solid fa-arrow-right"></i>
+                View All <i class="fa-solid fa-arrow-right"></i>
             </a>
 
         </div>
@@ -470,59 +312,73 @@
 
         <div class="category-grid">
 
-
-            <a href="shop.html?category=smartphones"
-               class="category-card">
+            <a href="shop.html?category=phones" class="category-card">
 
                 <div class="category-icon">
-
                     <i class="fa-solid fa-mobile-screen-button"></i>
-
                 </div>
 
-                <h3>
-                    Smartphones
-                </h3>
+                <h3>Cellphones</h3>
 
                 <p>
-                    Phones & mobile devices
+                    Smartphones and mobile accessories
                 </p>
 
             </a>
 
 
-            <a href="shop.html?category=electronics"
-               class="category-card">
+            <a href="shop.html?category=electronics" class="category-card">
 
                 <div class="category-icon">
-
                     <i class="fa-solid fa-tv"></i>
-
                 </div>
 
-                <h3>
-                    Electronics
-                </h3>
+                <h3>Electronics</h3>
 
                 <p>
-                    TVs & entertainment
+                    TVs and electronic essentials
                 </p>
 
             </a>
 
 
-            <a href="shop.html?category=solar"
-               class="category-card">
+            <a href="shop.html?category=gadgets" class="category-card">
 
                 <div class="category-icon">
-
-                    <i class="fa-solid fa-sun"></i>
-
+                    <i class="fa-solid fa-microchip"></i>
                 </div>
 
-                <h3>
-                    Solar
-                </h3>
+                <h3>Gadgets</h3>
+
+                <p>
+                    Smart gadgets and accessories
+                </p>
+
+            </a>
+
+
+            <a href="shop.html?category=power" class="category-card">
+
+                <div class="category-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <h3>Generators</h3>
+
+                <p>
+                    Reliable backup power
+                </p>
+
+            </a>
+
+
+            <a href="shop.html?category=solar" class="category-card">
+
+                <div class="category-icon">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+
+                <h3>Solar</h3>
 
                 <p>
                     Solar power solutions
@@ -531,61 +387,16 @@
             </a>
 
 
-            <a href="shop.html?category=power"
-               class="category-card">
+            <a href="shop.html?category=fridges" class="category-card">
 
                 <div class="category-icon">
-
-                    <i class="fa-solid fa-bolt"></i>
-
+                    <i class="fa-solid fa-snowflake"></i>
                 </div>
 
-                <h3>
-                    Generators
-                </h3>
+                <h3>Fridges</h3>
 
                 <p>
-                    Reliable power solutions
-                </p>
-
-            </a>
-
-
-            <a href="shop.html?category=home"
-               class="category-card">
-
-                <div class="category-icon">
-
-                    <i class="fa-solid fa-house"></i>
-
-                </div>
-
-                <h3>
-                    Appliances
-                </h3>
-
-                <p>
-                    Appliances for your home
-                </p>
-
-            </a>
-
-
-            <a href="shop.html?category=accessories"
-               class="category-card">
-
-                <div class="category-icon">
-
-                    <i class="fa-solid fa-headphones"></i>
-
-                </div>
-
-                <h3>
-                    Accessories
-                </h3>
-
-                <p>
-                    Accessories & more
+                    Cooling and home appliances
                 </p>
 
             </a>
@@ -597,9 +408,7 @@
 </section>
 
 
-<!-- =====================================================
-     FEATURED PRODUCTS
-===================================================== -->
+<!-- ================= PRODUCTS ================= -->
 
 <section class="section products-section">
 
@@ -608,20 +417,12 @@
         <div class="section-heading">
 
             <div>
-
-                <span class="section-label">
-                    FEATURED PRODUCTS
-                </span>
-
-                <h2>
-                    Popular right now
-                </h2>
-
+                <span class="section-label">FEATURED PRODUCTS</span>
+                <h2>Popular Right Now</h2>
             </div>
 
             <a href="shop.html">
-                Shop All
-                <i class="fa-solid fa-arrow-right"></i>
+                Shop All <i class="fa-solid fa-arrow-right"></i>
             </a>
 
         </div>
@@ -629,7 +430,8 @@
 
         <div
             class="product-grid"
-            id="featuredProducts">
+            id="featuredProducts"
+        >
 
             <!-- Products loaded by JavaScript -->
 
@@ -640,9 +442,7 @@
 </section>
 
 
-<!-- =====================================================
-     PROMO
-===================================================== -->
+<!-- ================= PROMO ================= -->
 
 <section class="promo-section">
 
@@ -652,31 +452,27 @@
 
             <div>
 
-                <span>
-                    AFRIGADGETS
-                </span>
+                <span>POWER YOUR WORLD</span>
 
                 <h2>
-                    Power your world.<br>
-                    Connect your life.
+                    Stay Powered.<br>
+                    Stay Connected.
                 </h2>
 
                 <p>
-                    Explore our collection of electronics,
-                    gadgets and power solutions.
+                    Explore our range of generators,
+                    solar products and power solutions.
                 </p>
 
-                <a href="shop.html"
+                <a href="shop.html?category=power"
                    class="btn btn-white">
 
-                    Explore Products
-
+                    Explore Power Solutions
                     <i class="fa-solid fa-arrow-right"></i>
 
                 </a>
 
             </div>
-
 
             <i class="fa-solid fa-bolt promo-icon"></i>
 
@@ -687,52 +483,7 @@
 </section>
 
 
-<!-- =====================================================
-     NEW ARRIVALS
-===================================================== -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    NEW ARRIVALS
-                </span>
-
-                <h2>
-                    Fresh from AfriGadgets
-                </h2>
-
-            </div>
-
-            <a href="shop.html">
-                View All
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-        </div>
-
-
-        <div
-            class="product-grid"
-            id="newProducts">
-
-            <!-- Products loaded by JavaScript -->
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     NEWSLETTER
-===================================================== -->
+<!-- ================= NEWSLETTER ================= -->
 
 <section class="section newsletter">
 
@@ -745,23 +496,25 @@
             </span>
 
             <h2>
-                Get the latest from AfriGadgets
+                Get the latest deals.
             </h2>
 
             <p>
-                Be the first to hear about new products and offers.
+                Subscribe for new products and special offers.
             </p>
 
         </div>
 
 
-        <form class="newsletter-form"
-              id="newsletterForm">
+        <form
+            class="newsletter-form"
+            id="newsletterForm"
+        >
 
             <input
                 type="email"
                 id="newsletterEmail"
-                placeholder="Enter your email address"
+                placeholder="Enter your email"
                 required
             >
 
@@ -778,60 +531,35 @@
 </main>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
     <div class="container footer-grid">
 
-
-        <!-- BRAND -->
-
         <div class="footer-brand">
 
-            <a href="index.html"
-               class="logo">
-
+            <a href="index.html" class="logo">
                 Afri<span>Gadgets</span>
-
             </a>
 
             <p>
-                Your destination for gadgets, electronics,
-                power solutions and everyday technology.
+                Your online destination for gadgets,
+                electronics, power solutions and more.
             </p>
-
 
             <div class="socials">
 
-                <a href="#"
-                   aria-label="Facebook">
-
+                <a href="#" aria-label="Facebook">
                     <i class="fa-brands fa-facebook-f"></i>
-
                 </a>
 
-                <a href="#"
-                   aria-label="Instagram">
-
+                <a href="#" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
-
                 </a>
 
-                <a href="#"
-                   aria-label="TikTok">
-
-                    <i class="fa-brands fa-tiktok"></i>
-
-                </a>
-
-                <a href="#"
-                   aria-label="WhatsApp">
-
+                <a href="#" aria-label="WhatsApp">
                     <i class="fa-brands fa-whatsapp"></i>
-
                 </a>
 
             </div>
@@ -839,75 +567,34 @@
         </div>
 
 
-        <!-- SHOP -->
-
         <div>
 
-            <h3>
-                Shop
-            </h3>
+            <h3>Shop</h3>
 
-            <a href="shop.html">
-                All Products
-            </a>
-
-            <a href="shop.html?category=smartphones">
-                Smartphones
-            </a>
-
-            <a href="shop.html?category=electronics">
-                Electronics
-            </a>
-
-            <a href="shop.html?category=solar">
-                Solar
-            </a>
-
-            <a href="shop.html?category=power">
-                Power Solutions
-            </a>
+            <a href="shop.html">All Products</a>
+            <a href="shop.html?category=phones">Cellphones</a>
+            <a href="shop.html?category=electronics">Electronics</a>
+            <a href="shop.html?category=power">Generators</a>
+            <a href="shop.html?category=solar">Solar</a>
 
         </div>
 
 
-        <!-- INFORMATION -->
-
         <div>
 
-            <h3>
-                Information
-            </h3>
+            <h3>Information</h3>
 
-            <a href="about.html">
-                About Us
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="faq.html">
-                FAQ
-            </a>
-
-            <a href="delivery.html">
-                Delivery
-            </a>
-
-            <a href="payment.html">
-                Payment
-            </a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="cart.html">Cart</a>
 
         </div>
 
 
-        <!-- CONTACT -->
-
         <div>
 
-            <h3>
-                Contact Us
-            </h3>
+            <h3>Contact</h3>
 
             <p>
                 <i class="fa-solid fa-phone"></i>
@@ -944,12 +631,8 @@
 </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script src="js/products.js"></script>
-<script src="js/main.js"></script>
+<script src="products.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
