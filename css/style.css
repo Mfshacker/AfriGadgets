@@ -601,6 +601,99 @@ input {
     font-weight: 700;
 }
 
+/* GENERAL CONTENT PAGES */
+
+.page-banner {
+    background: #111;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.page-banner > div {
+    max-width: 850px;
+    margin: auto;
+}
+
+.page-banner span {
+    color: #f59e0b;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.page-banner h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    margin: 10px 0;
+}
+
+.page-banner p {
+    color: #ccc;
+}
+
+.content-section {
+    padding: 80px 20px;
+}
+
+.content-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.content-block {
+    margin-bottom: 45px;
+}
+
+.content-block h2 {
+    font-size: 30px;
+    margin: 8px 0 15px;
+}
+
+.content-block p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.section-label {
+    color: #f59e0b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.info-card > span {
+    font-size: 35px;
+}
+
+.info-card h3 {
+    margin: 10px 0;
+}
+
+.info-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
 .add-to-cart:hover {
     background: var(--accent);
     color: #111;
