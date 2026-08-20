@@ -466,21 +466,31 @@
                 </div>
 
 
-                <div class="form-group">
+<div class="form-group">
 
-                    <label for="productImage">
-                        Image URL
-                    </label>
+    <label for="productImageFile">
+        Product Image
+    </label>
 
-                    <input
-                        type="url"
-                        id="productImage"
-                        placeholder="https://..."
-                    >
+    <input
+        type="file"
+        id="productImageFile"
+        accept="image/jpeg,image/png,image/webp"
+    >
 
-                </div>
+    <small
+        id="uploadStatus"
+        style="display:block;margin-top:6px;color:#777;"
+    >
+        JPG, PNG or WebP
+    </small>
 
+    <input
+        type="hidden"
+        id="productImage"
+    >
 
+</div>
                 <div class="form-group full">
 
                     <label for="productDescription">
