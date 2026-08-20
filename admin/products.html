@@ -1,1 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Products | AfriGadgets Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+    <style>
+        .products-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        .add-product-button {
+            border: 0;
+            background: #f59e0b;
+            color: #111;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .products-table-wrapper {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        .products-table th,
+        .products-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .products-table th {
+            background: #fafafa;
+            font-size: 13px;
+        }
+
+        .product-thumbnail {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 5px;
+            background: #eee;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .status-featured {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-normal {
+            background: #eee;
+            color: #555;
+        }
+
+        .action-button {
+            border: 0;
+            padding: 7px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 4px;
+        }
+
+        .edit-button {
+            background: #eee;
+        }
+
+        .delete-button {
+            background: #dc3545;
+            color: white;
+        }
+
+        /* MODAL */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .close-modal {
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+        }
+
+        .save-product {
+            width: 100%;
+            padding: 13px;
+            border: 0;
+            border-radius: 5px;
+            background: #111;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .empty-products {
+            padding: 50px;
+            text-align: center;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+
+            .products-toolbar {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+
+        <div class="admin-logo">
+            AfriGadgets
+            <span>ADMIN</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Dashboard
+            </a>
+
+            <a href="products.html" class="active">
+                Products
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="settings.html">
+                Store Settings
+            </a>
+
+            <a href="../index.html">
+                View Store
+            </a>
+
+        </nav>
+
+        <button id="logoutButton">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+        <header class="admin-header">
+
+            <h1>Products</h1>
+
+            <p>
+                Add and manage products in your AfriGadgets store.
+            </p>
+
+        </header>
+
+
+        <div class="products-toolbar">
+
+            <div>
+                <strong id="totalProducts">
+                    0 products
+                </strong>
+            </div>
+
+            <button
+                class="add-product-button"
+                id="openAddProduct"
+            >
+                + Add Product
+            </button>
+
+        </div>
+
+
+        <div class="products-table-wrapper">
+
+            <table class="products-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Featured</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="productsTableBody">
+
+                    <tr>
+
+                        <td colspan="7">
+                            <div class="empty-products">
+                                Loading products...
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2 id="modalTitle">
+                Add Product
+            </h2>
+
+            <button
+                class="close-modal"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="productForm">
+
+            <input
+                type="hidden"
+                id="productId"
+            >
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        required
+                        placeholder="e.g. Samsung Galaxy A56"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productPrice">
+                        Price (R)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        min="0"
+                        step="0.01"
+                        required
+                        placeholder="5999.99"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productStock">
+                        Stock
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productStock"
+                        min="0"
+                        required
+                        placeholder="10"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="productCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="cellphones">
+                            Cellphones
+                        </option>
+
+                        <option value="gadgets">
+                            Gadgets
+                        </option>
+
+                        <option value="televisions">
+                            Smart TVs
+                        </option>
+
+                        <option value="fridges">
+                            Fridges
+                        </option>
+
+                        <option value="generators">
+                            Generators
+                        </option>
+
+                        <option value="solar">
+                            Solar
+                        </option>
+
+                        <option value="appliances">
+                            Appliances
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productImage">
+                        Image URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="productImage"
+                        placeholder="https://..."
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        placeholder="Describe the product..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label class="checkbox-group">
+
+                        <input
+                            type="checkbox"
+                            id="productFeatured"
+                        >
+
+                        Featured product
+
+                    </label>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="save-product"
+                id="saveProduct"
+            >
+                Save Product
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script type="module" src="../js/product-admin.js"></script>
+<script type="module" src="../js/admin.js"></script>
+
+</body>
+</html>
