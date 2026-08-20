@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>AfriGadgets Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar">
+
+            <div class="admin-logo">
+                AfriGadgets
+                <span>ADMIN</span>
+            </div>
+
+            <nav>
+
+                <a href="index.html" class="active">
+                    Dashboard
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="settings.html">
+                    Store Settings
+                </a>
+
+                <a href="../index.html">
+                    View Store
+                </a>
+
+            </nav>
+
+            <button id="logoutButton">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <main class="admin-main">
+
+            <header class="admin-header">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome to AfriGadgets administration.</p>
+                </div>
+
+            </header>
+
+
+            <section class="dashboard-cards">
+
+                <div class="dashboard-card">
+                    <span>Products</span>
+                    <strong id="productCount">0</strong>
+                </div>
+
+                <div class="dashboard-card">
+                    <span>Orders</span>
+                    <strong id="orderCount">0</strong>
+                </div>
+
+                <div class="dashboard-card">
+                    <span>Pending Orders</span>
+                    <strong id="pendingCount">0</strong>
+                </div>
+
+                <div class="dashboard-card">
+                    <span>Store Status</span>
+                    <strong class="online">
+                        Online
+                    </strong>
+                </div>
+
+            </section>
+
+
+            <section class="admin-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Quick Actions</h2>
+                        <p>Manage your store.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a href="products.html">
+                        <span>📦</span>
+                        <strong>Manage Products</strong>
+                        <small>Add, edit and remove products</small>
+                    </a>
+
+
+                    <a href="orders.html">
+                        <span>🛒</span>
+                        <strong>View Orders</strong>
+                        <small>Manage customer orders</small>
+                    </a>
+
+
+                    <a href="settings.html">
+                        <span>⚙️</span>
+                        <strong>Store Settings</strong>
+                        <small>Bank, delivery and store details</small>
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script type="module" src="../js/admin.js"></script>
+
+</body>
+</html>
