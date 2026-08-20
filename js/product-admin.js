@@ -8,7 +8,13 @@ import {
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-import { db } from "./firebase.js";
+import {
+    ref,
+    uploadBytes,
+    getDownloadURL
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-storage.js";
+
+import { db, storage } from "./firebase.js";
 
 
 const productsCollection =
@@ -16,24 +22,16 @@ const productsCollection =
 
 
 const tableBody =
-    document.getElementById(
-        "productsTableBody"
-    );
+    document.getElementById("productsTableBody");
 
 const modal =
-    document.getElementById(
-        "productModal"
-    );
+    document.getElementById("productModal");
 
 const form =
-    document.getElementById(
-        "productForm"
-    );
+    document.getElementById("productForm");
 
 const modalTitle =
-    document.getElementById(
-        "modalTitle"
-    );
+    document.getElementById("modalTitle");
 
 
 // LOAD PRODUCTS
@@ -95,55 +93,44 @@ async function loadProducts() {
 
                 const price =
                     Number(product.price || 0)
-                        .toLocaleString(
-                            "en-ZA",
-                            {
-                                minimumFractionDigits: 2
-                            }
-                        );
+                    .toLocaleString(
+                        "en-ZA",
+                        {
+                            minimumFractionDigits: 2
+                        }
+                    );
 
 
                 return `
-
                     <tr>
 
                         <td>
-
                             <img
                                 class="product-thumbnail"
                                 src="${product.image || "../assets/images/placeholder.jpg"}"
                                 alt="${escapeHTML(product.name || "Product")}"
                             >
-
                         </td>
 
-
                         <td>
-
                             <strong>
                                 ${escapeHTML(product.name || "Unnamed product")}
                             </strong>
-
                         </td>
-
 
                         <td>
                             ${escapeHTML(product.category || "-")}
                         </td>
 
-
                         <td>
                             R${price}
                         </td>
-
 
                         <td>
                             ${Number(product.stock || 0)}
                         </td>
 
-
                         <td>
-
                             ${
                                 product.featured
                                 ?
@@ -155,9 +142,7 @@ async function loadProducts() {
                                     Normal
                                 </span>`
                             }
-
                         </td>
-
 
                         <td>
 
@@ -178,7 +163,6 @@ async function loadProducts() {
                         </td>
 
                     </tr>
-
                 `;
 
             }).join("");
@@ -208,7 +192,7 @@ async function loadProducts() {
 }
 
 
-// ATTACH BUTTON ACTIONS
+// BUTTON ACTIONS
 
 function attachActions(products) {
 
@@ -257,7 +241,7 @@ function attachActions(products) {
 }
 
 
-// OPEN ADD MODAL
+// OPEN ADD PRODUCT
 
 document
     .getElementById("openAddProduct")
@@ -270,6 +254,15 @@ document
             document.getElementById(
                 "productId"
             ).value = "";
+
+            document.getElementById(
+                "productImage"
+            ).value = "";
+
+            document.getElementById(
+                "uploadStatus"
+            ).textContent =
+                "JPG, PNG or WebP";
 
             modalTitle.textContent =
                 "Add Product";
@@ -294,9 +287,7 @@ modal.addEventListener(
     "click",
     event => {
 
-        if (
-            event.target === modal
-        ) {
+        if (event.target === modal) {
             closeModal();
         }
 
@@ -306,14 +297,12 @@ modal.addEventListener(
 
 function closeModal() {
 
-    modal.classList.remove(
-        "active"
-    );
+    modal.classList.remove("active");
 
 }
 
 
-// OPEN EDIT
+// EDIT PRODUCT
 
 function openEditProduct(product) {
 
@@ -351,13 +340,84 @@ function openEditProduct(product) {
     ).checked =
         product.featured === true;
 
+    document.getElementById(
+        "uploadStatus"
+    ).textContent =
+        product.image
+        ? "Existing image will be kept unless you select a new one."
+        : "No image uploaded.";
+
 
     modalTitle.textContent =
         "Edit Product";
 
+    modal.classList.add("active");
 
-    modal.classList.add(
-        "active"
+}
+
+
+// UPLOAD IMAGE
+
+async function uploadProductImage(file) {
+
+    if (!file) {
+        return null;
+    }
+
+
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+
+    if (!allowedTypes.includes(file.type)) {
+
+        throw new Error(
+            "Please select a JPG, PNG or WebP image."
+        );
+
+    }
+
+
+    // 5 MB LIMIT
+
+    if (file.size > 5 * 1024 * 1024) {
+
+        throw new Error(
+            "Image must be smaller than 5 MB."
+        );
+
+    }
+
+
+    const extension =
+        file.name
+        .split(".")
+        .pop()
+        .toLowerCase();
+
+
+    const filename =
+        `${Date.now()}-${crypto.randomUUID()}.${extension}`;
+
+
+    const storageReference =
+        ref(
+            storage,
+            `products/${filename}`
+        );
+
+
+    await uploadBytes(
+        storageReference,
+        file
+    );
+
+
+    return await getDownloadURL(
+        storageReference
     );
 
 }
@@ -377,6 +437,11 @@ form.addEventListener(
                 "saveProduct"
             );
 
+        const uploadStatus =
+            document.getElementById(
+                "uploadStatus"
+            );
+
 
         saveButton.disabled = true;
 
@@ -390,6 +455,44 @@ form.addEventListener(
                 document.getElementById(
                     "productId"
                 ).value;
+
+
+            const selectedFile =
+                document.getElementById(
+                    "productImageFile"
+                ).files[0];
+
+
+            let imageUrl =
+                document.getElementById(
+                    "productImage"
+                ).value.trim();
+
+
+            // UPLOAD NEW IMAGE
+
+            if (selectedFile) {
+
+                uploadStatus.textContent =
+                    "Uploading image...";
+
+                uploadStatus.style.color =
+                    "#f59e0b";
+
+
+                imageUrl =
+                    await uploadProductImage(
+                        selectedFile
+                    );
+
+
+                uploadStatus.textContent =
+                    "Image uploaded successfully.";
+
+                uploadStatus.style.color =
+                    "#198754";
+
+            }
 
 
             const productData = {
@@ -419,9 +522,7 @@ form.addEventListener(
                     ).value,
 
                 image:
-                    document.getElementById(
-                        "productImage"
-                    ).value.trim(),
+                    imageUrl,
 
                 description:
                     document.getElementById(
@@ -487,6 +588,7 @@ form.addEventListener(
             );
 
             alert(
+                error.message ||
                 "Something went wrong while saving the product."
             );
 
@@ -551,7 +653,7 @@ async function deleteProduct(productId) {
 }
 
 
-// BASIC HTML ESCAPING
+// HTML ESCAPING
 
 function escapeHTML(value) {
 
@@ -564,7 +666,5 @@ function escapeHTML(value) {
 
 }
 
-
-// INITIAL LOAD
 
 loadProducts();
