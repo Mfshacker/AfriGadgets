@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create Account | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/storefront/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="checkout-header">
+      <div class="container checkout-header-content">
+        <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+        <div class="checkout-secure">
+          <i class="fa-solid fa-lock"></i>
+          Secure Sign Up
+        </div>
+      </div>
+    </header>
+
+    <main class="account-main">
+      <div class="account-card">
+        <p class="account-label">AFRIGADGETS</p>
+        <h1>Create account</h1>
+        <p class="account-copy">Create an account to check out and track your orders.</p>
+
+        <form id="signupForm" novalidate>
+          <label for="signupName">Full name</label>
+          <input id="signupName" name="name" type="text" autocomplete="name" required />
+
+          <label for="signupEmail">Email address</label>
+          <input
+            id="signupEmail"
+            name="email"
+            type="email"
+            autocomplete="username"
+            required
+          />
+
+          <label for="signupPhone">Phone number</label>
+          <input id="signupPhone" name="phone" type="tel" autocomplete="tel" />
+
+          <label for="signupPassword">Password</label>
+          <input
+            id="signupPassword"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            required
+          />
+
+          <p id="signupMessage" class="account-message" role="alert"></p>
+
+          <button type="submit" class="btn btn-primary">Create account</button>
+        </form>
+
+        <a href="login.html" class="account-switch">
+          Already have an account? Sign in
+        </a>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="../js/shared/main.js"></script>
+    <script src="../js/pages/signup.js"></script>
+  </body>
+</html>

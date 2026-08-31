@@ -1,0 +1,146 @@
+/* SHOP PAGE */
+
+.shop-header {
+  padding: 65px 0;
+  background: var(--light);
+}
+
+.shop-header h1 {
+  margin-top: 10px;
+  color: var(--dark);
+  font-size: 42px;
+}
+
+.shop-header p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.shop-section {
+  padding: 55px 0 80px;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 35px;
+}
+
+.shop-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.filter-box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.filter-box h3 {
+  color: var(--dark);
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.category-filter {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 10px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.category-filter:hover,
+.category-filter.active {
+  background: rgba(11, 122, 83, 0.16);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.filter-box label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.filter-box input {
+  margin-right: 8px;
+}
+
+.shop-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#resultCount {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#sortProducts {
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 12px;
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+}
+
+.shop-products .product-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.no-products {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--muted);
+}
+
+.no-products i {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.no-products h2 {
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .shop-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .shop-products .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-header h1 {
+    font-size: 32px;
+  }
+
+  .shop-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-products .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

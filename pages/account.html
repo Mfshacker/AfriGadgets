@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Account | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/storefront/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="checkout-header">
+      <div class="container checkout-header-content">
+        <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+        <button type="button" id="accountLogout" class="btn btn-secondary">
+          Sign out
+        </button>
+      </div>
+    </header>
+
+    <main class="account-main">
+      <div class="account-stack">
+        <div class="account-card">
+          <p class="account-label">MY ACCOUNT</p>
+          <h1 id="accountGreeting">Welcome</h1>
+          <p class="account-copy">Update your details below.</p>
+
+          <form id="profileForm" novalidate>
+            <label for="profileName">Full name</label>
+            <input id="profileName" name="name" type="text" autocomplete="name" />
+
+            <label for="profilePhone">Phone number</label>
+            <input id="profilePhone" name="phone" type="tel" autocomplete="tel" />
+
+            <label for="profileEmail">Email address</label>
+            <input id="profileEmail" type="email" disabled />
+
+            <p id="profileMessage" class="account-message" role="alert"></p>
+
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+        </div>
+
+        <div class="account-card account-orders">
+          <p class="account-label">ORDER HISTORY</p>
+          <h1>Your orders</h1>
+          <p class="account-copy">Your order history is below.</p>
+
+          <div id="accountOrders"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- RADIAL QUICK-NAV -->
+
+    <div class="radial-fab" id="radialFab">
+      <button
+        type="button"
+        class="radial-fab-toggle"
+        aria-label="Quick navigation"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-compass"></i>
+      </button>
+
+      <div class="radial-fab-items">
+        <a href="../index.html" class="radial-fab-item" title="Home">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="shop.html" class="radial-fab-item" title="Shop">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+        <a href="cart.html" class="radial-fab-item" title="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+        <a href="track-order.html" class="radial-fab-item" title="Track Order">
+          <i class="fa-solid fa-truck-fast"></i>
+        </a>
+
+        <a href="contact.html" class="radial-fab-item" title="Contact">
+          <i class="fa-solid fa-headset"></i>
+        </a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="../js/shared/main.js"></script>
+    <script src="../js/shared/radial-fab.js"></script>
+    <script src="../js/pages/account.js"></script>
+  </body>
+</html>

@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FAQ | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/storefront/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ============================= -->
+    <!-- PROMO BAR -->
+    <!-- ============================= -->
+
+    <div class="promo-bar">
+      <div class="promo-track">
+        <span> 🏷️ 100% Authentic Products </span>
+
+        <span> 🏷️ WhatsApp Support — We Respond in Minutes </span>
+
+        <span> 🏷️ 30% OFF — August to December Special </span>
+
+        <span> 🏷️ Free Nationwide Delivery </span>
+
+        <span> 🏷️ Orders Over R10,000 Get 25% Discount </span>
+
+        <span> 🏷️ Same-Day Delivery in South Africa </span>
+
+        <!-- DUPLICATE FOR SEAMLESS SCROLL -->
+
+        <span> 🏷️ 100% Authentic Products </span>
+
+        <span> 🏷️ WhatsApp Support — We Respond in Minutes </span>
+
+        <span> 🏷️ 30% OFF — August to December Special </span>
+
+        <span> 🏷️ Free Nationwide Delivery </span>
+
+        <span> 🏷️ Orders Over R10,000 Get 25% Discount </span>
+
+        <span> 🏷️ Same-Day Delivery in South Africa </span>
+      </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="header">
+      <div class="container header-content">
+        <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="homeSearch"
+            placeholder="What are you looking for?"
+          />
+
+          <button onclick="searchHome()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <a href="account.html" class="header-action">
+            <i class="fa-regular fa-user"></i>
+
+            <span> Account </span>
+          </a>
+
+          <a href="cart.html" class="header-action cart-button">
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span> Cart </span>
+
+            <b id="cartCount"> 0 </b>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+      <div class="container nav-content">
+        <a href="../index.html" class="nav-link"> Home </a>
+
+        <!-- SHOP ALL -->
+
+        <div class="nav-dropdown">
+          <a href="shop.html" class="dropdown-trigger nav-link">
+            Shop All
+
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="shop.html?category=cellphones">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              Cellphones
+            </a>
+
+            <a href="shop.html?category=gadgets">
+              <i class="fa-solid fa-headphones"></i>
+              Gadgets
+            </a>
+
+            <a href="shop.html?category=tv">
+              <i class="fa-solid fa-tv"></i>
+              Smart TVs
+            </a>
+
+            <a href="shop.html?category=solar">
+              <i class="fa-solid fa-solar-panel"></i>
+              Solar
+            </a>
+
+            <a href="shop.html?category=generators">
+              <i class="fa-solid fa-bolt"></i>
+              Generators
+            </a>
+
+            <a href="shop.html?category=fridges">
+              <i class="fa-solid fa-snowflake"></i>
+              Fridges
+            </a>
+
+            <a href="shop.html?category=audio">
+              <i class="fa-solid fa-volume-high"></i>
+              Audio
+            </a>
+
+            <a href="shop.html?category=other">
+              <i class="fa-solid fa-box"></i>
+              Other
+            </a>
+          </div>
+        </div>
+
+        <a href="offers.html" class="nav-link"> Offers </a>
+
+        <a href="new.html" class="nav-link"> New </a>
+
+        <a href="faq.html" class="nav-link"> FAQ </a>
+
+        <a href="about.html" class="nav-link"> About </a>
+
+        <a href="contact.html" class="nav-link"> Contact </a>
+      </div>
+    </nav>
+
+    <!-- ============================= -->
+    <!-- FAQ HERO -->
+    <!-- ============================= -->
+
+    <main>
+      <section class="faq-hero">
+        <div class="container">
+          <span class="section-label"> FREQUENTLY ASKED QUESTIONS </span>
+
+          <h1>
+            How can we
+            <span>help?</span>
+          </h1>
+
+          <p>
+            Find answers to common questions about AfriGadgets, orders,
+            payments, delivery and more.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================= -->
+      <!-- FAQ CONTENT -->
+      <!-- ============================= -->
+
+      <section class="faq-section">
+        <div class="container">
+          <div class="faq-layout">
+            <!-- LEFT CATEGORY -->
+
+            <div class="faq-sidebar">
+              <div class="faq-sidebar-card">
+                <i class="fa-solid fa-circle-question"></i>
+
+                <h3>Still need help?</h3>
+
+                <p>
+                  Can't find the answer you're looking for? Our support team is
+                  ready to help.
+                </p>
+
+                <a href="contact.html" class="btn btn-white">
+                  Contact Us
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- QUESTIONS -->
+
+            <div class="faq-list">
+              <!-- ORDERS -->
+
+              <div class="faq-category">
+                <span class="section-label"> ORDERS & SHOPPING </span>
+
+                <h2>Ordering</h2>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> How do I place an order? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Browse our products, select the item you want and add it to
+                    your cart. When you're ready, proceed to checkout and
+                    complete your order details.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> Can I order more than one product? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Yes. You can add multiple products to your cart before
+                    proceeding to checkout.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> Can I change my order after placing it? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Contact us as soon as possible with your order reference.
+                    We'll let you know whether the order can still be changed.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PRODUCTS -->
+
+              <div class="faq-category">
+                <span class="section-label"> PRODUCTS </span>
+
+                <h2>Products & availability</h2>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> Are your products authentic? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    AfriGadgets aims to provide genuine, quality products.
+                    Product information and specifications are displayed on the
+                    relevant product page.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> What if a product is out of stock? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Availability can change quickly. Contact our support team if
+                    you're looking for a product that isn't currently available.
+                  </p>
+                </div>
+              </div>
+
+              <!-- PAYMENT -->
+
+              <div class="faq-category">
+                <span class="section-label"> PAYMENTS </span>
+
+                <h2>Payment & proof of payment</h2>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> How do I pay for my order? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    AfriGadgets currently uses bank transfer as the available
+                    payment method. Your checkout page will display the payment
+                    details and the total amount to transfer.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> Where do I find the payment details? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Your bank transfer details will be shown during checkout
+                    after you have entered your order information.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> Can I upload proof of payment? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Yes. After completing your bank transfer, you can upload
+                    your proof of payment during checkout using the POP upload
+                    section.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> What file formats can I upload? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    The checkout POP section is designed to accept common
+                    proof-of-payment file formats. Follow the instructions
+                    displayed on the checkout page when uploading your document.
+                  </p>
+                </div>
+              </div>
+
+              <!-- DELIVERY -->
+
+              <div class="faq-category">
+                <span class="section-label"> DELIVERY </span>
+
+                <h2>Delivery</h2>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> Do you deliver across South Africa? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Yes. AfriGadgets is set up to serve customers across South
+                    Africa.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> How much is delivery? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Delivery charges are displayed during checkout. The store
+                    delivery fee can also be configured from the AfriGadgets
+                    admin panel.
+                  </p>
+                </div>
+              </div>
+
+              <!-- RETURNS -->
+
+              <div class="faq-category">
+                <span class="section-label"> RETURNS </span>
+
+                <h2>Returns & support</h2>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span>
+                    What should I do if I receive a damaged product?
+                  </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Contact AfriGadgets support as soon as possible with your
+                    order details and information about the issue.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button">
+                  <span> How can I contact AfriGadgets? </span>
+
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <div class="faq-answer">
+                  <p>
+                    Visit our Contact page to find our available support
+                    channels and send us an enquiry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand" data-footer-reveal>
+          <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+          <p>
+            Your destination for gadgets, electronics, smart technology and
+            power solutions.
+          </p>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.1s">
+          <h3>Shop</h3>
+
+          <a href="shop.html?category=cellphones"> Cellphones </a>
+
+          <a href="shop.html?category=gadgets"> Gadgets </a>
+
+          <a href="shop.html?category=tv"> Smart TVs </a>
+
+          <a href="shop.html?category=solar"> Solar </a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.2s">
+          <h3>Help</h3>
+
+          <a href="contact.html"> Contact Us </a>
+
+          <a href="delivery.html"> Delivery </a>
+
+          <a href="returns.html"> Returns </a>
+
+          <a href="faq.html"> FAQs </a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.3s">
+          <h3>Contact</h3>
+
+          <p>📞 +27 65 572 3658</p>
+          <p>📧 support@afrigadgets.co.za</p>
+          <p>🇿🇦 South Africa</p>
+
+          <a
+            href="https://wa.me/27655723658"
+            target="_blank"
+            class="footer-whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            © <span class="footer-year"></span> AfriGadgets. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+     FLOATING WHATSAPP
+========================================= -->
+
+    <a
+      href="https://wa.me/27655723658"
+      target="_blank"
+      class="floating-whatsapp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================= -->
+    <!-- FAQ JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script>
+      document.querySelectorAll(".faq-question").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const item = this.parentElement;
+
+          const answer = item.querySelector(".faq-answer");
+
+          const icon = this.querySelector("i");
+
+          document.querySelectorAll(".faq-item").forEach(function (otherItem) {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+
+              const otherAnswer = otherItem.querySelector(".faq-answer");
+
+              const otherIcon = otherItem.querySelector(".faq-question i");
+
+              if (otherAnswer) {
+                otherAnswer.style.maxHeight = null;
+              }
+
+              if (otherIcon) {
+                otherIcon.className = "fa-solid fa-plus";
+              }
+            }
+          });
+
+          item.classList.toggle("active");
+
+          if (item.classList.contains("active")) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+
+            icon.className = "fa-solid fa-minus";
+          } else {
+            answer.style.maxHeight = null;
+
+            icon.className = "fa-solid fa-plus";
+          }
+        });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="../js/shared/products.js"></script>
+
+    <script src="../js/shared/main.js"></script>
+  </body>
+</html>

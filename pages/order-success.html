@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Order Successful | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/storefront/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <main
+      style="
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        background: #f5f7f6;
+      "
+    >
+      <div
+        style="
+          width: 100%;
+          max-width: 550px;
+          background: #ffffff;
+          border-radius: 12px;
+          padding: 45px 30px;
+          text-align: center;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #eaf7f0;
+            color: #087443;
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+          "
+        >
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <span
+          style="
+            color: #087443;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+          "
+        >
+          AFRIGADGETS
+        </span>
+
+        <h1 style="color: #17201b; font-size: 28px; margin: 10px 0">
+          Order Submitted
+        </h1>
+
+        <p
+          style="
+            color: #7b8580;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+          "
+        >
+          Thank you for your order. We have received your order details and
+          proof of payment.
+        </p>
+
+        <div
+          style="
+            background: #f5f7f6;
+            border: 1px solid #e3e8e5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+          "
+        >
+          <span
+            style="
+              display: block;
+              color: #7b8580;
+              font-size: 10px;
+              font-weight: 700;
+              margin-bottom: 7px;
+            "
+          >
+            PAYMENT REFERENCE
+          </span>
+
+          <strong
+            id="successReference"
+            style="
+              display: block;
+              color: #087443;
+              font-size: 22px;
+              letter-spacing: 1px;
+            "
+          >
+            Loading...
+          </strong>
+        </div>
+
+        <p
+          style="
+            color: #7b8580;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+          "
+        >
+          Please keep your payment reference for your records. We will verify
+          your payment before processing your order.
+        </p>
+
+        <a
+          href="../index.html"
+          style="
+            display: block;
+            text-decoration: none;
+            background: #087443;
+            color: #ffffff;
+            padding: 14px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+          "
+        >
+          Continue Shopping
+        </a>
+      </div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      const reference = params.get("reference");
+
+      const referenceElement = document.getElementById("successReference");
+
+      if (reference) {
+        referenceElement.textContent = reference;
+      } else {
+        referenceElement.textContent = "Order received";
+      }
+    </script>
+  </body>
+</html>

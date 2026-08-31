@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AfriGadgets | Gadgets, Electronics & Power Solutions</title>
+
+    <!--
+      REVISION 3. Rev 1 (Apple-pinned minimal dark) read as generic
+      dark-SaaS template. Rev 2 (assigned by concept-seed: the prepaid
+      meter / airtime voucher, drawn from this audience's own world) fixed
+      "generic" but shipped two real problems: a hard, seamless-nothing
+      seam where the site's untouched light header met a flat black hero,
+      and too many decorative devices stacked at once (scanlines, dashed
+      borders in three places, a three-LED cluster) reading as busy
+      rather than clean. Both fixed here, not by starting over again.
+      THESIS: The prepaid meter and the airtime voucher are the two
+      objects this exact audience reads digits off every week — dark mode
+      is the meter's own glowing LCD, light mode is the paper voucher it
+      prints onto. Same devices, inverted material, one device per idea.
+      OWN-WORLD: One accent (LED-amber / ink-amber depending on theme)
+      carried through the promo bar, header, nav, and breadcrumb as well
+      as the page content now — no chrome is left unthemed. Hanken
+      Grotesk for running text (header/nav keep Inter and the logo keeps
+      its own brand green, for continuity with every other page); Doto
+      (a genuine dot-matrix face) reserved only for numerals that
+      represent a real count or price.
+      STORY: unchanged from rev 2 — see DESIGN.md.
+      FIRST VIEWPORT: A compact meter readout (one LED, real catalogue
+      count in segment numerals) inside a header/nav/promo bar that now
+      shares the same palette, so the page reads as one surface, not
+      chrome bolted onto content.
+      FORM: concept unchanged (rev 2's assigned direction); execution
+      distilled and themed. Scope: homepage only — every other page is
+      untouched.
+    -->
+
+    <link rel="stylesheet" href="css/storefront/style.css" />
+
+    <link rel="stylesheet" href="css/storefront/pages/home.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Doto:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body class="home-dark">
+    <script>
+      // Applied before paint so switching themes doesn't flash the wrong one.
+      if (localStorage.getItem("afrigadgets-home-theme") === "light") {
+        document.body.classList.add("theme-light");
+      }
+    </script>
+
+    <!-- =========================================
+     PROMO BAR
+========================================= -->
+
+    <div class="promo-bar">
+      <div class="promo-track">
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          100% Authentic Products
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          WhatsApp Support — We Respond in Minutes
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          30% OFF — August to December Special
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          Free Worldwide Delivery
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          Orders Over R10,000 Get 25% Discount
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          Same-Day Delivery in South Africa
+        </span>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+
+    <header class="header">
+      <div class="container header-content">
+        <a href="index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="homeSearch"
+            placeholder="What are you looking for?"
+          />
+
+          <button onclick="searchHome()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <a href="pages/contact.html" class="header-action">
+            <i class="fa-regular fa-user"></i>
+
+            <span> Connect </span>
+          </a>
+
+          <a href="pages/account.html" class="header-action">
+            <i class="fa-regular fa-user"></i>
+
+            <span> Account </span>
+          </a>
+
+          <a href="pages/cart.html" class="header-action cart-button">
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span> Cart </span>
+
+            <b id="cartCount"> 0 </b>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+      <div class="container nav-content">
+        <a href="index.html" class="nav-link"> Home </a>
+
+        <!-- SHOP ALL -->
+
+        <div class="nav-dropdown">
+          <a href="pages/shop.html" class="dropdown-trigger nav-link">
+            Shop All
+
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="pages/shop.html?category=cellphones">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              Cellphones
+            </a>
+
+            <a href="pages/shop.html?category=gadgets">
+              <i class="fa-solid fa-headphones"></i>
+              Gadgets
+            </a>
+
+            <a href="pages/shop.html?category=tv">
+              <i class="fa-solid fa-tv"></i>
+              Smart TVs
+            </a>
+
+            <a href="pages/shop.html?category=solar">
+              <i class="fa-solid fa-solar-panel"></i>
+              Solar
+            </a>
+
+            <a href="pages/shop.html?category=generators">
+              <i class="fa-solid fa-bolt"></i>
+              Generators
+            </a>
+
+            <a href="pages/shop.html?category=fridges">
+              <i class="fa-solid fa-snowflake"></i>
+              Fridges
+            </a>
+
+            <a href="pages/shop.html?category=audio">
+              <i class="fa-solid fa-volume-high"></i>
+              Audio
+            </a>
+
+            <a href="pages/shop.html?category=other">
+              <i class="fa-solid fa-box"></i>
+              Other
+            </a>
+          </div>
+        </div>
+
+        <a href="pages/offers.html" class="nav-link"> Offers </a>
+
+        <a href="pages/new.html" class="nav-link"> New </a>
+
+        <a href="pages/faq.html" class="nav-link"> FAQ </a>
+
+        <a href="pages/about.html" class="nav-link"> About </a>
+
+        <a href="pages/contact.html" class="nav-link"> Contact </a>
+      </div>
+    </nav>
+
+    <!-- CURRENT CATEGORY -->
+
+    <div class="current-category-bar">
+      <div class="container current-category-inner">
+        <div class="current-category-left">
+          <i class="fa-solid fa-house"></i>
+
+          <span>Home</span>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <strong id="currentCategory"> All Products </strong>
+        </div>
+
+        <div class="current-category-right">AfriGadgets Store</div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="home-hero">
+      <button
+        type="button"
+        id="homeThemeToggle"
+        class="home-theme-toggle"
+        aria-label="Switch to light mode"
+      >
+        <i class="fa-solid fa-sun"></i>
+      </button>
+
+      <div class="container home-hero-inner">
+        <div class="home-hero-content">
+          <div class="home-meter">
+            <span class="home-meter-led" aria-hidden="true"></span>
+
+            <div class="home-meter-readout">
+              <span class="home-meter-digits">110+</span>
+              <span class="home-meter-caption">Products in stock</span>
+            </div>
+          </div>
+
+          <h1>
+            One place for<br />
+            everything you need.
+          </h1>
+
+          <p class="home-hero-copy">
+            Phones and everyday gadgets, alongside the solar panels and
+            generators that keep your home running — a catalogue most stores
+            split in two, kept in one.
+          </p>
+
+          <div class="home-hero-actions">
+            <a href="pages/shop.html" class="home-btn home-btn-fill">
+              Shop the catalogue
+            </a>
+
+            <a href="#categories" class="home-btn home-btn-quiet">
+              Explore categories
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="home-hero-visual" aria-hidden="true">
+          <div class="home-hero-image home-hero-image-main">
+            <img
+              src="images/hero/gaming-pc.jpg"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+
+          <div class="home-hero-image-col">
+            <div class="home-hero-image">
+              <img
+                src="images/hero/phone-repair.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <div class="home-hero-image">
+              <img
+                src="images/hero/afri.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+
+    <section class="home-section" id="categories">
+      <div class="container">
+        <div class="home-heading" data-reveal>
+          <div>
+            <span class="home-label"> Shop by category </span>
+
+            <h2>Find what you need</h2>
+          </div>
+
+          <a href="pages/shop.html" class="home-text-link">
+            View all
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="home-category-grid">
+          <a
+            href="pages/shop.html?category=cellphones"
+            class="home-category-card"
+            data-reveal
+          >
+            <span class="home-category-screen"><i class="fa-solid fa-mobile-screen-button"></i></span>
+            <h3>Cellphones</h3>
+            <span>Smartphones &amp; accessories</span>
+          </a>
+
+          <a
+            href="pages/shop.html?category=gadgets"
+            class="home-category-card"
+            data-reveal
+          >
+            <span class="home-category-screen"><i class="fa-solid fa-headphones"></i></span>
+            <h3>Gadgets</h3>
+            <span>Smart tech &amp; accessories</span>
+          </a>
+
+          <a
+            href="pages/shop.html?category=tv"
+            class="home-category-card"
+            data-reveal
+          >
+            <span class="home-category-screen"><i class="fa-solid fa-tv"></i></span>
+            <h3>Smart TVs</h3>
+            <span>Entertainment</span>
+          </a>
+
+          <a
+            href="pages/shop.html?category=solar"
+            class="home-category-card"
+            data-reveal
+          >
+            <span class="home-category-screen"><i class="fa-solid fa-solar-panel"></i></span>
+            <h3>Solar</h3>
+            <span>Panels &amp; systems</span>
+          </a>
+
+          <a
+            href="pages/shop.html?category=generators"
+            class="home-category-card"
+            data-reveal
+          >
+            <span class="home-category-screen"><i class="fa-solid fa-plug"></i></span>
+            <h3>Generators</h3>
+            <span>Backup power</span>
+          </a>
+
+          <a
+            href="pages/shop.html?category=fridges"
+            class="home-category-card"
+            data-reveal
+          >
+            <span class="home-category-screen"><i class="fa-solid fa-snowflake"></i></span>
+            <h3>Fridges</h3>
+            <span>Home appliances</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+
+    <section class="home-section">
+      <div class="container">
+        <div class="home-heading" data-reveal>
+          <div>
+            <span class="home-label"> Featured </span>
+
+            <h2>Popular right now</h2>
+          </div>
+
+          <a href="pages/shop.html" class="home-text-link">
+            Shop all
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div
+          id="featuredProducts"
+          class="home-product-grid"
+          data-reveal
+        ></div>
+      </div>
+    </section>
+
+    <!-- PROMO -->
+
+    <section class="home-promo">
+      <div class="container home-promo-inner">
+        <div>
+          <span class="home-label home-label-light"> Power your home </span>
+
+          <h2>Reliable power,<br />wherever you are.</h2>
+
+          <p>
+            Solar panels, inverters, and generators — the same catalogue as
+            your next phone, one checkout away.
+          </p>
+
+          <a
+            href="pages/shop.html?category=solar"
+            class="home-btn home-btn-fill-light"
+          >
+            Explore power solutions
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="home-promo-readout" aria-hidden="true">
+          <span class="home-promo-readout-digits">24/7</span>
+          <span class="home-promo-readout-caption">Backup ready</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY AFRIGADGETS -->
+
+    <section class="home-section">
+      <div class="container">
+        <div class="home-heading home-heading-centered" data-reveal>
+          <div>
+            <span class="home-label"> Why AfriGadgets </span>
+
+            <h2>Shop with confidence</h2>
+          </div>
+        </div>
+
+        <div class="home-benefits-grid">
+          <div class="home-benefit" data-reveal>
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Fast Delivery</h3>
+            <p>We deliver products across South Africa.</p>
+          </div>
+
+          <div class="home-benefit" data-reveal>
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Secure Shopping</h3>
+            <p>Your information is protected throughout your shopping journey.</p>
+          </div>
+
+          <div class="home-benefit" data-reveal>
+            <i class="fa-solid fa-headset"></i>
+            <h3>Customer Support</h3>
+            <p>We're here to help when you need us.</p>
+          </div>
+
+          <div class="home-benefit" data-reveal>
+            <i class="fa-solid fa-box-open"></i>
+            <h3>Quality Products</h3>
+            <p>Shop gadgets and electronics selected for our customers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer home-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand" data-footer-reveal>
+          <a href="index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+          <p>
+            Your destination for gadgets, electronics, smart technology and
+            power solutions.
+          </p>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.1s">
+          <h3>Shop</h3>
+
+          <a href="pages/shop.html?category=cellphones"> Cellphones </a>
+
+          <a href="pages/shop.html?category=gadgets"> Gadgets </a>
+
+          <a href="pages/shop.html?category=tv"> Smart TVs </a>
+
+          <a href="pages/shop.html?category=solar"> Solar </a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.2s">
+          <h3>Help</h3>
+
+          <a href="pages/contact.html"> Contact Us </a>
+
+          <a href="pages/delivery.html"> Delivery </a>
+
+          <a href="pages/returns.html"> Returns </a>
+
+          <a href="pages/faq.html"> FAQs </a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.3s">
+          <h3>Contact</h3>
+
+          <p>📞 +27 65 572 3658</p>
+
+          <p>📧 support@afrigadgets.co.za</p>
+
+          <p>🇿🇦 South Africa</p>
+
+          <a
+            href="https://wa.me/27655723658"
+            target="_blank"
+            class="footer-whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            © <span class="footer-year"></span> AfriGadgets. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+     FLOATING WHATSAPP
+========================================= -->
+
+    <a
+      href="https://wa.me/27655723658"
+      target="_blank"
+      class="floating-whatsapp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/shared/auth-config.js"></script>
+    <script src="js/shared/auth.js"></script>
+    <script src="js/shared/products.js"></script>
+    <script src="js/shared/main.js"></script>
+    <script src="js/pages/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Product | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/storefront/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- PROMO BAR -->
+
+    <div class="promo-bar">
+      <div class="promo-track">
+        <span> 🏷️ 100% Authentic Products </span>
+
+        <span> 🏷️ WhatsApp Support — We Respond in Minutes </span>
+
+        <span> 🏷️ 30% OFF — August to December Special </span>
+
+        <span> 🏷️ Free Nationwide Delivery </span>
+
+        <span> 🏷️ Orders Over R10,000 Get 25% Discount </span>
+
+        <span> 🏷️ Same-Day Delivery in South Africa </span>
+
+        <!-- Duplicate for seamless scrolling -->
+
+        <span> 🏷️ 100% Authentic Products </span>
+
+        <span> 🏷️ WhatsApp Support — We Respond in Minutes </span>
+
+        <span> 🏷️ 30% OFF — August to December Special </span>
+
+        <span> 🏷️ Free Nationwide Delivery </span>
+
+        <span> 🏷️ Orders Over R10,000 Get 25% Discount </span>
+
+        <span> 🏷️ Same-Day Delivery in South Africa </span>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container header-content">
+        <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="productSearch"
+            placeholder="Search products..."
+          />
+
+          <button onclick="goToSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <a href="contact.html" class="header-action">
+            <i class="fa-regular fa-user"></i>
+            <span>Connect</span>
+          </a>
+
+          <a href="account.html" class="header-action">
+            <i class="fa-regular fa-user"></i>
+            <span>Account</span>
+          </a>
+
+          <a href="cart.html" class="header-action cart-button">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Cart</span>
+            <b id="cartCount">0</b>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+      <div class="container nav-content">
+        <a href="../index.html" class="nav-link"> Home </a>
+
+        <!-- SHOP ALL -->
+
+        <div class="nav-dropdown">
+          <a href="shop.html" class="dropdown-trigger nav-link">
+            Shop All
+
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="shop.html?category=cellphones">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              Cellphones
+            </a>
+
+            <a href="shop.html?category=gadgets">
+              <i class="fa-solid fa-headphones"></i>
+              Gadgets
+            </a>
+
+            <a href="shop.html?category=tv">
+              <i class="fa-solid fa-tv"></i>
+              Smart TVs
+            </a>
+
+            <a href="shop.html?category=solar">
+              <i class="fa-solid fa-solar-panel"></i>
+              Solar
+            </a>
+
+            <a href="shop.html?category=generators">
+              <i class="fa-solid fa-bolt"></i>
+              Generators
+            </a>
+
+            <a href="shop.html?category=fridges">
+              <i class="fa-solid fa-snowflake"></i>
+              Fridges
+            </a>
+
+            <a href="shop.html?category=audio">
+              <i class="fa-solid fa-volume-high"></i>
+              Audio
+            </a>
+
+            <a href="shop.html?category=other">
+              <i class="fa-solid fa-box"></i>
+              Other
+            </a>
+          </div>
+        </div>
+
+        <a href="offers.html" class="nav-link"> Offers </a>
+
+        <a href="new.html" class="nav-link"> New </a>
+
+        <a href="faq.html" class="nav-link"> FAQ </a>
+
+        <a href="about.html" class="nav-link"> About </a>
+
+        <a href="contact.html" class="nav-link"> Contact </a>
+      </div>
+    </nav>
+
+    <!-- CURRENT CATEGORY -->
+
+    <div class="current-category-bar">
+      <div class="container current-category-inner">
+        <div class="current-category-left">
+          <i class="fa-solid fa-house"></i>
+
+          <span>Home</span>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <strong id="currentCategory"> All Products </strong>
+        </div>
+
+        <div class="current-category-right">AfriGadgets Store</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="product-detail-section">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <a href="shop.html">Shop</a>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <span id="breadcrumbProduct"> Product </span>
+          </div>
+
+          <div id="productDetails" class="product-details"></div>
+        </div>
+      </section>
+
+      <section class="related-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="section-label"> YOU MAY ALSO LIKE </span>
+
+              <h2>Related Products</h2>
+            </div>
+          </div>
+
+          <div id="relatedProducts" class="product-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand" data-footer-reveal>
+          <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+          <p>
+            Your destination for gadgets, electronics, smart technology and
+            power solutions.
+          </p>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.1s">
+          <h3>Shop</h3>
+
+          <a href="shop.html?category=cellphones"> Cellphones </a>
+
+          <a href="shop.html?category=gadgets"> Gadgets </a>
+
+          <a href="shop.html?category=tv"> Smart TVs </a>
+
+          <a href="shop.html?category=solar"> Solar </a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.2s">
+          <h3>Help</h3>
+
+          <a href="contact.html">Contact Us</a>
+          <a href="delivery.html">Delivery</a>
+          <a href="returns.html">Returns</a>
+          <a href="faq.html">FAQs</a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.3s">
+          <h3>Contact</h3>
+
+          <p>📞 +27 65 572 3658</p>
+          <p>📧 support@afrigadgets.co.za</p>
+          <p>🇿🇦 South Africa</p>
+
+          <a
+            href="https://wa.me/27655723658"
+            target="_blank"
+            class="footer-whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            © <span class="footer-year"></span> AfriGadgets. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+     FLOATING WHATSAPP
+========================================= -->
+
+    <a
+      href="https://wa.me/27655723658"
+      target="_blank"
+      class="floating-whatsapp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="../js/shared/products.js"></script>
+    <script src="../js/shared/main.js"></script>
+    <script src="../js/pages/product.js"></script>
+  </body>
+</html>

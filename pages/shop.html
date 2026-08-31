@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shop | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/storefront/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- PROMO BAR -->
+
+    <div class="promo-bar">
+      <div class="promo-track">
+        <span> 🏷️ 100% Authentic Products </span>
+
+        <span> 🏷️ WhatsApp Support — We Respond in Minutes </span>
+
+        <span> 🏷️ 30% OFF — August to December Special </span>
+
+        <span> 🏷️ Free Nationwide Delivery </span>
+
+        <span> 🏷️ Orders Over R10,000 Get 25% Discount </span>
+
+        <span> 🏷️ Same-Day Delivery in South Africa </span>
+
+        <!-- Duplicate for seamless scrolling -->
+
+        <span> 🏷️ 100% Authentic Products </span>
+
+        <span> 🏷️ WhatsApp Support — We Respond in Minutes </span>
+
+        <span> 🏷️ 30% OFF — August to December Special </span>
+
+        <span> 🏷️ Free Nationwide Delivery </span>
+
+        <span> 🏷️ Orders Over R10,000 Get 25% Discount </span>
+
+        <span> 🏷️ Same-Day Delivery in South Africa </span>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container header-content">
+        <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+        <div class="search-box">
+          <input type="text" id="shopSearch" placeholder="Search products..." />
+
+          <button id="shopSearchButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <a href="account.html" class="header-action">
+            <i class="fa-regular fa-user"></i>
+            <span>Account</span>
+          </a>
+
+          <a href="cart.html" class="header-action cart-button">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Cart</span>
+            <b id="cartCount">0</b>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+      <div class="container nav-content">
+        <a href="../index.html" class="nav-link"> Home </a>
+
+        <!-- SHOP ALL -->
+
+        <div class="nav-dropdown">
+          <a href="shop.html" class="dropdown-trigger nav-link">
+            Shop All
+
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="shop.html?category=cellphones">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              Cellphones
+            </a>
+
+            <a href="shop.html?category=gadgets">
+              <i class="fa-solid fa-headphones"></i>
+              Gadgets
+            </a>
+
+            <a href="shop.html?category=tv">
+              <i class="fa-solid fa-tv"></i>
+              Smart TVs
+            </a>
+
+            <a href="shop.html?category=solar">
+              <i class="fa-solid fa-solar-panel"></i>
+              Solar
+            </a>
+
+            <a href="shop.html?category=generators">
+              <i class="fa-solid fa-bolt"></i>
+              Generators
+            </a>
+
+            <a href="shop.html?category=fridges">
+              <i class="fa-solid fa-snowflake"></i>
+              Fridges
+            </a>
+
+            <a href="shop.html?category=audio">
+              <i class="fa-solid fa-volume-high"></i>
+              Audio
+            </a>
+
+            <a href="shop.html?category=other">
+              <i class="fa-solid fa-box"></i>
+              Other
+            </a>
+          </div>
+        </div>
+
+        <a href="offers.html" class="nav-link"> Offers </a>
+
+        <a href="new.html" class="nav-link"> New </a>
+
+        <a href="faq.html" class="nav-link"> FAQ </a>
+
+        <a href="about.html" class="nav-link"> About </a>
+
+        <a href="contact.html" class="nav-link"> Contact </a>
+      </div>
+    </nav>
+
+    <!-- CURRENT CATEGORY -->
+
+    <div class="current-category-bar">
+      <div class="container current-category-inner">
+        <div class="current-category-left">
+          <i class="fa-solid fa-house"></i>
+
+          <span>Home</span>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <strong id="currentCategory"> All Products </strong>
+        </div>
+
+        <div class="current-category-right">AfriGadgets Store</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="shop-header">
+        <div class="container">
+          <span class="section-label">AFRIGADGETS STORE</span>
+
+          <h1>Shop All Products</h1>
+
+          <p>
+            Explore our collection of technology, electronics and power
+            solutions.
+          </p>
+        </div>
+      </section>
+
+      <section class="shop-section">
+        <div class="container shop-layout">
+          <!-- SIDEBAR -->
+
+          <aside class="shop-sidebar">
+            <div class="filter-box">
+              <h3>Categories</h3>
+
+              <button class="category-filter active" data-category="all">
+                All Products
+              </button>
+
+              <button class="category-filter" data-category="cellphones">
+                Cellphones
+              </button>
+
+              <button class="category-filter" data-category="gadgets">
+                Gadgets
+              </button>
+
+              <button class="category-filter" data-category="tv">
+                Smart TVs
+              </button>
+
+              <button class="category-filter" data-category="solar">
+                Solar
+              </button>
+
+              <button class="category-filter" data-category="generators">
+                Generators
+              </button>
+
+              <button class="category-filter" data-category="fridges">
+                Fridges
+              </button>
+
+              <button class="category-filter" data-category="audio">
+                Audio
+              </button>
+            </div>
+
+            <div class="filter-box">
+              <h3>Price</h3>
+
+              <label>
+                <input type="radio" name="price" value="all" checked />
+                All prices
+              </label>
+
+              <label>
+                <input type="radio" name="price" value="under1000" />
+                Under R1,000
+              </label>
+
+              <label>
+                <input type="radio" name="price" value="1000-5000" />
+                R1,000 - R5,000
+              </label>
+
+              <label>
+                <input type="radio" name="price" value="5000-10000" />
+                R5,000 - R10,000
+              </label>
+
+              <label>
+                <input type="radio" name="price" value="over10000" />
+                Over R10,000
+              </label>
+            </div>
+          </aside>
+
+          <!-- PRODUCTS -->
+
+          <div class="shop-products">
+            <div class="shop-toolbar">
+              <span id="resultCount"> 0 products </span>
+
+              <select id="sortProducts">
+                <option value="featured">Featured</option>
+
+                <option value="low">Price: Low to High</option>
+
+                <option value="high">Price: High to Low</option>
+
+                <option value="az">Name: A-Z</option>
+              </select>
+            </div>
+
+            <div id="shopProducts" class="product-grid"></div>
+
+            <div id="noProducts" class="no-products" style="display: none">
+              <i class="fa-solid fa-box-open"></i>
+
+              <h2>No products found</h2>
+
+              <p>Try another search or category.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand" data-footer-reveal>
+          <a href="../index.html" class="logo"> Afri<span>Gadgets</span> </a>
+
+          <p>
+            Your destination for gadgets, electronics, smart technology and
+            power solutions.
+          </p>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.1s">
+          <h3>Shop</h3>
+
+          <a href="shop.html?category=cellphones"> Cellphones </a>
+
+          <a href="shop.html?category=gadgets"> Gadgets </a>
+
+          <a href="shop.html?category=tv"> Smart TVs </a>
+
+          <a href="shop.html?category=solar"> Solar </a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.2s">
+          <h3>Help</h3>
+
+          <a href="contact.html">Contact Us</a>
+          <a href="delivery.html">Delivery</a>
+          <a href="returns.html">Returns</a>
+          <a href="faq.html">FAQs</a>
+        </div>
+
+        <div data-footer-reveal style="transition-delay: 0.3s">
+          <h3>Contact</h3>
+
+          <p>📞 +27 65 572 3658</p>
+          <p>📧 support@afrigadgets.co.za</p>
+          <p>🇿🇦 South Africa</p>
+
+          <a
+            href="https://wa.me/27655723658"
+            target="_blank"
+            class="footer-whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            © <span class="footer-year"></span> AfriGadgets. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+     FLOATING WHATSAPP
+========================================= -->
+
+    <a
+      href="https://wa.me/27655723658"
+      target="_blank"
+      class="floating-whatsapp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="../js/shared/products.js"></script>
+    <script src="../js/pages/shop.js"></script>
+    <script src="../js/shared/main.js"></script>
+  </body>
+</html>

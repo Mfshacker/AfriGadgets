@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Settings | AfriGadgets Admin</title>
+
+    <link rel="stylesheet" href="../css/admin/admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="admin-layout">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+        <div class="admin-logo">Afri<span>Gadgets</span></div>
+
+        <div class="admin-label">ADMIN PANEL</div>
+
+        <nav>
+          <a href="index.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="products.html">
+            <i class="fa-solid fa-box"></i>
+            <span>Products</span>
+          </a>
+
+          <a href="orders.html">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Orders</span>
+          </a>
+
+          <a href="customers.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+          </a>
+
+          <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="account.html">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>My Account</span>
+          </a>
+        </nav>
+
+        <a href="../index.html" class="view-store">
+          <i class="fa-solid fa-store"></i>
+          <span>View Store</span>
+        </a>
+
+        <div class="sidebar-toggle">
+          <button type="button" id="sidebarToggle" title="Collapse sidebar">
+            <i class="fa-solid fa-angles-left"></i>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="admin-main">
+        <!-- HEADER -->
+
+        <header class="admin-header">
+          <div class="admin-header-top">
+            <div>
+              <span> AFRIGADGETS ADMIN </span>
+
+              <h1>Settings</h1>
+            </div>
+
+            <div class="admin-user">
+              <button
+                type="button"
+                class="admin-user-trigger"
+                id="adminUserTrigger"
+              >
+                <div class="admin-avatar" id="adminAvatarLetter">A</div>
+
+                <div>
+                  <strong id="adminUserName"> Administrator </strong>
+
+                  <small> Admin </small>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="admin-user-menu">
+                <a href="account.html">
+                  <i class="fa-solid fa-user"></i>
+                  My Account
+                </a>
+
+                <a href="settings.html">
+                  <i class="fa-solid fa-gear"></i>
+                  Settings
+                </a>
+
+                <hr />
+
+                <button type="button" id="adminLogout">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-breadcrumb" id="adminBreadcrumb"></div>
+        </header>
+
+        <!-- SETTINGS -->
+
+        <section class="admin-section">
+          <div class="section-header">
+            <div>
+              <span> STORE CONFIGURATION </span>
+
+              <h2>Store Settings</h2>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <!-- BANK DETAILS -->
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <div>
+                  <h3>Bank Transfer</h3>
+
+                  <p>Payment details shown at checkout.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label> Bank Name </label>
+
+                <input
+                  type="text"
+                  id="settingBankName"
+                  placeholder="e.g. Capitec Bank"
+                />
+              </div>
+
+              <div class="form-group">
+                <label> Account Holder </label>
+
+                <input
+                  type="text"
+                  id="settingAccountHolder"
+                  placeholder="AfriGadgets"
+                />
+              </div>
+
+              <div class="form-group">
+                <label> Account Number </label>
+
+                <input
+                  type="text"
+                  id="settingAccountNumber"
+                  placeholder="Account number"
+                />
+              </div>
+
+              <div class="form-group">
+                <label> Account Type </label>
+
+                <select id="settingAccountType">
+                  <option>Current / Cheque</option>
+
+                  <option>Savings</option>
+
+                  <option>Transmission</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label> PayShap </label>
+
+                <input
+                  type="text"
+                  id="settingPayShap"
+                  placeholder="PayShap number"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="primary-button settings-save"
+                onclick="saveBankSettings()"
+              >
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Bank Details
+              </button>
+            </div>
+
+            <!-- DELIVERY -->
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div>
+                  <h3>Delivery</h3>
+
+                  <p>Configure your delivery charge.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label> Delivery Fee (R) </label>
+
+                <input
+                  type="number"
+                  id="settingDeliveryFee"
+                  min="0"
+                  step="0.01"
+                  placeholder="99.00"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="primary-button settings-save"
+                onclick="saveDeliverySettings()"
+              >
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Delivery Settings
+              </button>
+            </div>
+
+            <!-- STORE INFORMATION -->
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <i class="fa-solid fa-store"></i>
+                </div>
+
+                <div>
+                  <h3>Store Information</h3>
+
+                  <p>General AfriGadgets information.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label> Store Name </label>
+
+                <input
+                  type="text"
+                  id="settingStoreName"
+                  placeholder="AfriGadgets"
+                />
+              </div>
+
+              <div class="form-group">
+                <label> Phone Number </label>
+
+                <input
+                  type="text"
+                  id="settingPhone"
+                  placeholder="+27 XX XXX XXXX"
+                />
+              </div>
+
+              <div class="form-group">
+                <label> Email </label>
+
+                <input
+                  type="email"
+                  id="settingEmail"
+                  placeholder="support@example.com"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="primary-button settings-save"
+                onclick="saveStoreSettings()"
+              >
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Store Information
+              </button>
+            </div>
+
+            <!-- CHECKOUT -->
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <i class="fa-solid fa-receipt"></i>
+                </div>
+
+                <div>
+                  <h3>Checkout</h3>
+
+                  <p>Customer payment instructions.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label> Payment Instructions </label>
+
+                <textarea
+                  id="settingPaymentInstructions"
+                  placeholder="Enter payment instructions..."
+                ></textarea>
+              </div>
+
+              <button
+                type="button"
+                class="primary-button settings-save"
+                onclick="saveCheckoutSettings()"
+              >
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Checkout Settings
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- RADIAL QUICK-NAV -->
+
+    <div class="radial-fab" id="radialFab">
+      <button
+        type="button"
+        class="radial-fab-toggle"
+        aria-label="Quick navigation"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-compass"></i>
+      </button>
+
+      <div class="radial-fab-items">
+        <a href="index.html" class="radial-fab-item" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+
+        <a href="products.html" class="radial-fab-item" title="Products">
+          <i class="fa-solid fa-box"></i>
+        </a>
+
+        <a href="orders.html" class="radial-fab-item" title="Orders">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+        <a href="customers.html" class="radial-fab-item" title="Customers">
+          <i class="fa-solid fa-users"></i>
+        </a>
+
+        <a href="settings.html" class="radial-fab-item" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <a href="account.html" class="radial-fab-item" title="My Account">
+          <i class="fa-solid fa-user-gear"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Authentication runs before dashboard code. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="guard.js"></script>
+    <script src="shared.js"></script>
+    <script src="../js/shared/radial-fab.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

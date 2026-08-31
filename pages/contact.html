@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact Us | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/pages/contact.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- =========================================
+     PROMO BAR
+========================================= -->
+
+    <div class="promo-bar">
+      <div class="promo-track">
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          100% Authentic Products
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          WhatsApp Support — We Respond in Minutes
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          30% OFF — August to December Special
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          Free Worldwide Delivery
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          Orders Over R10,000 Get 25% Discount
+        </span>
+
+        <span>
+          <i class="fa-solid fa-tag"></i>
+          Same-Day Delivery in South Africa
+        </span>
+      </div>
+    </div>
+
+    <!-- =========================================
+     HEADER
+========================================= -->
+
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- LOGO -->
+
+        <a href="../index.html" class="brand">
+          <div class="brand-logo">AF</div>
+
+          <div class="brand-text">
+            <strong> AfriGadgets </strong>
+
+            <small> PREMIUM GADGETS </small>
+          </div>
+        </a>
+
+        <!-- NAVIGATION -->
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+          <a href="../index.html"> Home </a>
+
+          <div class="nav-shop">
+            <button type="button" onclick="toggleShopMenu()">
+              Shop
+
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div id="shopMenu" class="shop-menu">
+              <a href="shop.html"> All Products </a>
+
+              <a href="shop.html?category=cellphones"> Cellphones </a>
+
+              <a href="shop.html?category=gadgets"> Gadgets </a>
+
+              <a href="shop.html?category=tv"> Smart TVs </a>
+
+              <a href="shop.html?category=solar"> Solar </a>
+
+              <a href="shop.html?category=generators"> Generators </a>
+
+              <a href="shop.html?category=fridges"> Fridges </a>
+            </div>
+          </div>
+
+          <a href="offers.html">
+            Offers
+            <span class="offer-badge"></span>
+          </a>
+
+          <a href="new.html"> New </a>
+
+          <a href="faq.html"> FAQ </a>
+
+          <a href="about.html"> About </a>
+
+          <a href="contact.html" class="active"> Contact </a>
+        </nav>
+
+        <!-- ACTIONS -->
+
+        <div class="header-actions">
+          <a href="cart.html" class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span> 1 </span>
+          </a>
+
+          <a
+            href="https://wa.me/27655723658"
+            class="whatsapp-button"
+            target="_blank"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+
+            WhatsApp
+          </a>
+
+          <a href="track-order.html" class="track-button"> Track Order </a>
+
+          <a href="account.html" class="track-button"> Account </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================
+     CONTACT PAGE
+========================================= -->
+
+    <main class="contact-page">
+      <!-- INTRO -->
+
+      <section class="contact-intro">
+        <span class="eyebrow"> GET IN TOUCH </span>
+
+        <h1>Contact <span>Us</span></h1>
+
+        <p>
+          We're available on WhatsApp every day. For everything else, fill in
+          the form and we'll get back to you quickly.
+        </p>
+      </section>
+
+      <!-- CONTACT CONTENT -->
+
+      <section class="contact-grid">
+        <!-- LEFT -->
+
+        <div class="contact-left">
+          <!-- PHONE -->
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+
+            <div>
+              <span> WHATSAPP & CALLS </span>
+
+              <strong> +27 65 572 3658 </strong>
+
+              <small> Available daily — fastest response </small>
+            </div>
+          </div>
+
+          <!-- EMAIL -->
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+
+            <div>
+              <span> EMAIL </span>
+
+              <strong> support@afrigadgets.co.za </strong>
+
+              <small> We reply within 24 hours </small>
+            </div>
+          </div>
+
+          <!-- ADDRESS -->
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div>
+              <span> ADDRESS </span>
+
+              <strong>
+                Unit 7, Eagle Street, Okavango Park, Bellville, Cape Town
+              </strong>
+
+              <small> Online store — nationwide delivery </small>
+            </div>
+          </div>
+
+          <!-- HOURS -->
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+
+            <div>
+              <span> HOURS </span>
+
+              <strong> Mon–Sat: 8am–6pm </strong>
+
+              <small> Sunday: 9am–3pm </small>
+            </div>
+          </div>
+
+          <!-- FASTEST RESPONSE -->
+
+          <div class="response-card">
+            <h3>Fastest Response</h3>
+
+            <p>
+              For the quickest help, message us directly on WhatsApp. We
+              typically respond within minutes.
+            </p>
+
+            <a
+              href="https://wa.me/27655723658"
+              target="_blank"
+              class="whatsapp-large"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+
+              Open WhatsApp Chat
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="message-card">
+          <h2>Send Us a Message</h2>
+
+          <form id="contactForm" onsubmit="sendContactMessage(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label> Full Name * </label>
+
+                <input
+                  type="text"
+                  id="contactName"
+                  placeholder="John Smith"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label> Phone / WhatsApp * </label>
+
+                <input
+                  type="tel"
+                  id="contactPhone"
+                  placeholder="082 000 0000"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label> Email </label>
+
+              <input
+                type="email"
+                id="contactEmail"
+                placeholder="john@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label> Enquiry Type </label>
+
+              <select id="contactType">
+                <option>General Enquiry</option>
+
+                <option>Product Enquiry</option>
+
+                <option>Order Enquiry</option>
+
+                <option>Delivery</option>
+
+                <option>Returns</option>
+
+                <option>Wholesale</option>
+
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label> Message * </label>
+
+              <textarea
+                id="contactMessage"
+                placeholder="Tell us what you need..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="send-button">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================
+     FLOATING WHATSAPP
+========================================= -->
+
+    <a
+      href="https://wa.me/27655723658"
+      target="_blank"
+      class="floating-whatsapp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+      function toggleShopMenu() {
+        const menu = document.getElementById("shopMenu");
+
+        menu.classList.toggle("show");
+      }
+
+      document.addEventListener("click", function (event) {
+        const shop = document.querySelector(".nav-shop");
+
+        const menu = document.getElementById("shopMenu");
+
+        if (!shop.contains(event.target)) {
+          menu.classList.remove("show");
+        }
+      });
+
+      function sendContactMessage(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("contactName").value;
+
+        const phone = document.getElementById("contactPhone").value;
+
+        const email = document.getElementById("contactEmail").value;
+
+        const type = document.getElementById("contactType").value;
+
+        const message = document.getElementById("contactMessage").value;
+
+        const whatsappMessage =
+          `Hello AfriGadgets.%0A%0A` +
+          `Name: ${encodeURIComponent(name)}%0A` +
+          `Phone: ${encodeURIComponent(phone)}%0A` +
+          `Email: ${encodeURIComponent(email)}%0A` +
+          `Enquiry: ${encodeURIComponent(type)}%0A%0A` +
+          `${encodeURIComponent(message)}`;
+
+        window.open(
+          `https://wa.me/27655723658?text=${whatsappMessage}`,
+          "_blank",
+        );
+      }
+    </script>
+  </body>
+</html>

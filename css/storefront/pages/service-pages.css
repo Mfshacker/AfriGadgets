@@ -1,0 +1,204 @@
+/* =========================================
+   AFRIGADGETS SERVICE / INFORMATION PAGES
+========================================= */
+
+.service-hero {
+  padding: 82px 0 72px;
+  background: linear-gradient(135deg, #101218 0%, #0c1712 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.service-hero .eyebrow {
+  display: inline-flex;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.service-hero h1 {
+  margin: 13px 0 15px;
+  color: var(--dark);
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.03;
+  letter-spacing: -1.8px;
+}
+
+.service-hero p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.service-section {
+  padding: 65px 0 90px;
+  background: var(--page-bg);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 42px;
+}
+
+.service-card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+}
+
+.service-card i {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 17px;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(11, 122, 83, 0.11);
+  color: var(--primary);
+}
+
+.service-card h2,
+.service-card h3 {
+  margin-bottom: 9px;
+  color: var(--dark);
+  font-size: 19px;
+}
+
+.service-card p,
+.service-card li {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.service-card ul {
+  margin: 10px 0 0 18px;
+}
+
+.service-panel {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.service-panel h2 {
+  margin-bottom: 13px;
+  color: var(--dark);
+  font-size: 26px;
+}
+
+.service-panel p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.service-actions .btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 7px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.service-status i {
+  font-size: 10px;
+}
+
+.service-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.service-form input {
+  min-width: 0;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--light);
+  color: var(--dark);
+}
+
+.service-form input:focus {
+  border-color: var(--primary);
+}
+
+.service-form button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 20px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#trackingResult {
+  margin-top: 20px;
+}
+
+.info-note {
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: rgba(245, 180, 0, 0.06);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.service-products {
+  margin-top: 30px;
+}
+
+@media (max-width: 800px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-hero {
+    padding: 60px 0 52px;
+  }
+
+  .service-section {
+    padding: 50px 0 65px;
+  }
+
+  .service-panel,
+  .service-card {
+    padding: 21px;
+  }
+}

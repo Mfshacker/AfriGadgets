@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Products | AfriGadgets Admin</title>
+
+    <link rel="stylesheet" href="../css/admin/admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="admin-layout">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+        <div class="admin-logo">Afri<span>Gadgets</span></div>
+
+        <div class="admin-label">ADMIN PANEL</div>
+
+        <nav>
+          <a href="index.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="products.html">
+            <i class="fa-solid fa-box"></i>
+            <span>Products</span>
+          </a>
+
+          <a href="orders.html">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Orders</span>
+          </a>
+
+          <a href="customers.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+          </a>
+
+          <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="account.html">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>My Account</span>
+          </a>
+        </nav>
+
+        <a href="../index.html" class="view-store">
+          <i class="fa-solid fa-store"></i>
+          <span>View Store</span>
+        </a>
+
+        <div class="sidebar-toggle">
+          <button type="button" id="sidebarToggle" title="Collapse sidebar">
+            <i class="fa-solid fa-angles-left"></i>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="admin-main">
+        <!-- HEADER -->
+
+        <header class="admin-header">
+          <div class="admin-header-top">
+            <div>
+              <span> AFRIGADGETS ADMIN </span>
+
+              <h1>Products</h1>
+            </div>
+
+            <div class="admin-user">
+              <button
+                type="button"
+                class="admin-user-trigger"
+                id="adminUserTrigger"
+              >
+                <div class="admin-avatar" id="adminAvatarLetter">A</div>
+
+                <div>
+                  <strong id="adminUserName"> Administrator </strong>
+
+                  <small> Admin </small>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="admin-user-menu">
+                <a href="account.html">
+                  <i class="fa-solid fa-user"></i>
+                  My Account
+                </a>
+
+                <a href="settings.html">
+                  <i class="fa-solid fa-gear"></i>
+                  Settings
+                </a>
+
+                <hr />
+
+                <button type="button" id="adminLogout">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-breadcrumb" id="adminBreadcrumb"></div>
+        </header>
+
+        <!-- PRODUCTS -->
+
+        <section class="admin-section">
+          <div class="section-header">
+            <div>
+              <span> CATALOGUE </span>
+
+              <h2>Products</h2>
+            </div>
+
+            <button
+              type="button"
+              class="primary-button"
+              onclick="openProductForm()"
+            >
+              <i class="fa-solid fa-plus"></i>
+
+              Add Product
+            </button>
+          </div>
+
+          <div class="products-toolbar">
+            <input
+              type="text"
+              id="productSearch"
+              placeholder="Search products by name..."
+              oninput="handleProductSearchChange(this.value)"
+            />
+
+            <select
+              id="productCategoryFilterSelect"
+              onchange="handleProductCategoryChange(this.value)"
+            >
+              <option value="">All categories</option>
+
+              <option value="cellphones">Cellphones</option>
+
+              <option value="gadgets">Gadgets</option>
+
+              <option value="tv">Smart TVs</option>
+
+              <option value="solar">Solar</option>
+
+              <option value="generators">Generators</option>
+
+              <option value="fridges">Fridges</option>
+
+              <option value="audio">Audio</option>
+
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+
+                  <th>Category</th>
+
+                  <th>Price</th>
+
+                  <th>Stock</th>
+
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody id="productsTable"></tbody>
+            </table>
+          </div>
+
+          <div class="products-pagination">
+            <button
+              type="button"
+              id="productsPrevPage"
+              class="table-action"
+              onclick="changeProductPage(-1)"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+              Prev
+            </button>
+
+            <span id="productsPageIndicator">Page 1 of 1</span>
+
+            <button
+              type="button"
+              id="productsNextPage"
+              class="table-action"
+              onclick="changeProductPage(1)"
+            >
+              Next
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ================================= -->
+    <!-- PRODUCT MODAL -->
+    <!-- ================================= -->
+
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span> CATALOGUE </span>
+
+            <h2>Add Product</h2>
+          </div>
+
+          <button
+            type="button"
+            class="close-button"
+            onclick="closeProductForm()"
+          >
+            ×
+          </button>
+        </div>
+
+        <form id="productForm">
+          <!-- PRODUCT NAME -->
+
+          <div class="form-group">
+            <label> Product Name </label>
+
+            <input
+              type="text"
+              id="newProductName"
+              placeholder="e.g. Samsung Galaxy S25"
+              required
+            />
+          </div>
+
+          <!-- CATEGORY + PRICE -->
+
+          <div class="form-row">
+            <div class="form-group">
+              <label> Category </label>
+
+              <select id="newProductCategory" required>
+                <option value="">Select category</option>
+
+                <option value="cellphones">Cellphones</option>
+
+                <option value="gadgets">Gadgets</option>
+
+                <option value="tv">Smart TVs</option>
+
+                <option value="solar">Solar</option>
+
+                <option value="generators">Generators</option>
+
+                <option value="fridges">Fridges</option>
+
+                <option value="audio">Audio</option>
+
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label> Price (R) </label>
+
+              <input
+                type="number"
+                id="newProductPrice"
+                min="0"
+                step="0.01"
+                placeholder="0.00"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- STOCK -->
+
+          <div class="form-row">
+            <div class="form-group">
+              <label> Stock Quantity </label>
+
+              <input
+                type="number"
+                id="newProductStock"
+                min="0"
+                step="1"
+                value="0"
+                placeholder="0"
+              />
+
+              <small> Number of units currently available. </small>
+            </div>
+
+            <div class="form-group">
+              <label> Stock Status </label>
+
+              <label class="checkbox-field">
+                <input
+                  type="checkbox"
+                  id="newProductInStock"
+                  checked
+                />
+
+                Product is in stock
+              </label>
+            </div>
+          </div>
+
+          <!-- IMAGE -->
+
+          <div class="form-group">
+            <label> Image filename </label>
+
+            <input type="text" id="newProductImage" placeholder="example.jpg" />
+
+            <small> Place the image inside images/products/ </small>
+          </div>
+
+          <!-- DESCRIPTION -->
+
+          <div class="form-group">
+            <label> Description </label>
+
+            <textarea
+              id="newProductDescription"
+              placeholder="Product description..."
+            ></textarea>
+          </div>
+
+          <!-- HIDDEN EDITING ID -->
+
+          <input type="hidden" id="editingProductId" value="" />
+
+          <!-- SUBMIT -->
+
+          <button type="submit" class="primary-button full-button">
+            <i class="fa-solid fa-plus"></i>
+
+            Add Product
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- RADIAL QUICK-NAV -->
+
+    <div class="radial-fab" id="radialFab">
+      <button
+        type="button"
+        class="radial-fab-toggle"
+        aria-label="Quick navigation"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-compass"></i>
+      </button>
+
+      <div class="radial-fab-items">
+        <a href="index.html" class="radial-fab-item" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+
+        <a href="products.html" class="radial-fab-item" title="Products">
+          <i class="fa-solid fa-box"></i>
+        </a>
+
+        <a href="orders.html" class="radial-fab-item" title="Orders">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+        <a href="customers.html" class="radial-fab-item" title="Customers">
+          <i class="fa-solid fa-users"></i>
+        </a>
+
+        <a href="settings.html" class="radial-fab-item" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <a href="account.html" class="radial-fab-item" title="My Account">
+          <i class="fa-solid fa-user-gear"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Authentication runs before dashboard code. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="guard.js"></script>
+    <script src="shared.js"></script>
+    <script src="../js/shared/radial-fab.js"></script>
+    <script src="products.js"></script>
+  </body>
+</html>
