@@ -1,0 +1,20 @@
+# Operating-system files
+Thumbs.db
+Desktop.ini
+
+# Editor and local tooling files
+.history/
+*.swp
+*.swo
+
+# Local development output
+*.log
+coverage/
+dist/
+build/
+
+# Private local overrides for authentication configuration
+js/shared/auth-config.local.js
+
+# Third-party reference templates (design lookup only, not site content)
+templates/

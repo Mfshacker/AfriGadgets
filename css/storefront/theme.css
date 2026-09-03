@@ -1,0 +1,128 @@
+/* =========================================================
+   AFRIGADGETS GLOBAL BRAND THEME
+   Solid black backgrounds, white content, gold accents.
+   WhatsApp remains its standard green.
+   ========================================================= */
+
+:root {
+  --primary: #e8bf3f !important;
+  --primary-dark: #cfa72f !important;
+  --primary-light: #111111 !important;
+  --accent: #e8bf3f !important;
+  --dark: #ffffff !important;
+  --text: #ffffff !important;
+  --muted: #ffffff !important;
+  --white: #111111 !important;
+  --light: #000000 !important;
+  --border: #2b2b2b !important;
+  --page-bg: #000000 !important;
+  --gold: #e8bf3f !important;
+  --gold-light: #f1cf58 !important;
+  --black: #000000 !important;
+  --card: #111111 !important;
+}
+
+html, body { background: #000 !important; color: #fff !important; }
+
+/* Shared storefront chrome */
+.promo-bar { background: #e8bf3f !important; color: #000 !important; }
+.header, .navigation, .site-header, .main-navigation { background: #000 !important; border-color: #2b2b2b !important; }
+.logo, .header-action, .nav-content a, .nav-container a, .dropdown-button, .main-nav > a, .nav-shop > button { color: #fff !important; }
+.logo span, .logo-accent, .brand-text strong { color: #e8bf3f !important; }
+.search-box, .search-container { background: #111 !important; border-color: #2b2b2b !important; }
+.search-box input, .search-container input { color: #fff !important; background: #111 !important; }
+.search-box input::placeholder, .search-container input::placeholder { color: #fff !important; }
+.search-box button { background: #e8bf3f !important; color: #000 !important; }
+.header-action:hover, .nav-content a:hover, .nav-content a.active, .main-nav > a:hover, .nav-shop > button:hover, .main-nav .active { color: #e8bf3f !important; }
+.cart-button b, .cart span { background: #e8bf3f !important; color: #000 !important; }
+
+.current-category-bar { background: #111 !important; border-color: #2b2b2b !important; }
+.current-category-left, .current-category-right { color: #fff !important; }
+.current-category-left strong { color: #e8bf3f !important; }
+
+/* Dropdowns */
+.dropdown-menu, .shop-menu { background: #111 !important; border: 1px solid #e8bf3f !important; box-shadow: none !important; }
+.dropdown-menu::before { background: #111 !important; border-left-color: #e8bf3f !important; border-top-color: #e8bf3f !important; }
+.dropdown-menu a, .shop-menu a { color: #fff !important; background: #111 !important; }
+.dropdown-menu a:hover, .shop-menu a:hover { background: #e8bf3f !important; color: #000 !important; }
+.dropdown-menu a i, .dropdown-menu i { color: #e8bf3f !important; }
+
+/* Remove irritating active-page highlight lines. */
+.navigation .nav-link.active::after,
+.navigation .nav-dropdown.active > .dropdown-trigger::after,
+.main-nav .active::after { display: none !important; }
+
+/* Solid content surfaces */
+.hero, .service-hero, .page-banner { background: #000 !important; }
+.service-section, .content-section, main { background: #000 !important; }
+.service-card, .service-panel, .info-card, .contact-card, .message-card { background: #111 !important; border-color: #2b2b2b !important; }
+.service-card i, .contact-icon { background: #000 !important; color: #e8bf3f !important; border: 1px solid #e8bf3f !important; }
+
+.page-banner h1, .page-banner p, .content-block h2, .content-block p, .info-card h3, .info-card p,
+.service-hero h1, .service-hero p, .service-card h2, .service-card h3, .service-card p, .service-card li,
+.service-panel h2, .service-panel p { color: #fff !important; }
+.page-banner span, .section-label, .service-hero .eyebrow { color: #e8bf3f !important; }
+
+.btn-primary, .btn-white { background: #e8bf3f !important; color: #000 !important; }
+.btn-secondary { background: #111 !important; border-color: #e8bf3f !important; color: #fff !important; }
+
+/* Footer: solid, no decorative white glow line. */
+.footer { background: #000 !important; border-color: #2b2b2b !important; box-shadow: none !important; }
+.footer::before { display: none !important; }
+.footer .logo, .footer h3 { color: #fff !important; }
+.footer-brand p, .footer-grid p, .footer-grid > div:not(.footer-brand) a { color: #fff !important; }
+.footer-grid > div:not(.footer-brand) a:hover { color: #e8bf3f !important; }
+.footer-bottom { border-color: #2b2b2b !important; }
+.footer-whatsapp, .footer-whatsapp i { color: #25d366 !important; }
+
+/* Do not make visible text/cards translucent. */
+.footer [data-footer-reveal], [data-reveal] { opacity: 1 !important; filter: none !important; }
+
+/* Floating WhatsApp intentionally stays green. */
+.floating-whatsapp {
+  background: #25d366 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Contact page uses a separate stylesheet, so normalize it here too. */
+.contact-page { background: #000 !important; }
+.brand-logo { background: #fff !important; color: #000 !important; border-color: #fff !important; }
+.contact-intro h1, .contact-intro p, .contact-card strong, .response-card h3, .message-card h2 { color: #fff !important; }
+.contact-intro p, .contact-card span, .contact-card small, .response-card p, .form-group label { color: #fff !important; }
+.contact-card, .response-card, .message-card { background: #111 !important; border-color: #2b2b2b !important; }
+.form-group input, .form-group select, .form-group textarea { background: #000 !important; color: #fff !important; border-color: #2b2b2b !important; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #fff !important; }
+.whatsapp-button, .send-button, .whatsapp-large { background: #e8bf3f !important; color: #000 !important; box-shadow: none !important; }
+.track-button { border-color: #e8bf3f !important; color: #e8bf3f !important; }
+.shop-menu a:hover { background: #e8bf3f !important; color: #000 !important; }
+
+/* Installment UI */
+.installment-button {
+  width: 100%; min-height: 42px; margin-top: 8px; padding: 0 12px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid #e8bf3f; border-radius: 8px; background: #000; color: #e8bf3f;
+  font: inherit; font-size: 12px; font-weight: 800; cursor: pointer;
+}
+.installment-button:hover { background: #e8bf3f; color: #000; }
+.installment-modal { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 20px; background: #000; }
+.installment-modal.is-open { display: flex; }
+.installment-dialog { width: min(520px, 100%); max-height: 90vh; overflow: auto; background: #111; border: 1px solid #e8bf3f; border-radius: 16px; color: #fff; }
+.installment-header { display: flex; justify-content: space-between; gap: 20px; padding: 20px; border-bottom: 1px solid #2b2b2b; }
+.installment-header h2, .installment-header p, .installment-product, .installment-label { color: #fff; }
+.installment-close { border: 1px solid #e8bf3f; background: #000; color: #e8bf3f; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; }
+.installment-body { padding: 20px; }
+.installment-product { padding: 16px; border: 1px solid #2b2b2b; background: #000; border-radius: 12px; }
+.installment-product strong { color: #e8bf3f; }
+.installment-terms { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 18px 0; }
+.installment-term { padding: 14px 8px; border: 1px solid #2b2b2b; border-radius: 10px; background: #000; color: #fff; cursor: pointer; text-align: center; }
+.installment-term strong { display: block; color: #fff; }
+.installment-term span { color: #e8bf3f; font-size: 12px; }
+.installment-term.is-selected { border-color: #e8bf3f; background: #e8bf3f; color: #000; }
+.installment-term.is-selected strong, .installment-term.is-selected span { color: #000; }
+.installment-payment { padding: 18px; border: 1px solid #e8bf3f; background: #000; text-align: center; }
+.installment-payment small { display: block; color: #fff; }
+.installment-payment strong { display: block; margin: 5px 0; color: #e8bf3f; font-size: 30px; }
+.installment-note { color: #fff; font-size: 12px; line-height: 1.6; }
+.installment-cta { width: 100%; min-height: 48px; margin-top: 15px; border: 1px solid #e8bf3f; border-radius: 9px; background: #e8bf3f; color: #000; font-weight: 800; cursor: pointer; }
+@media (max-width: 600px) { .installment-terms { grid-template-columns: repeat(2,1fr); } }

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="../images/branding/afrigadgets-favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/branding/afrigadgets-favicon.png" />
+    <link rel="apple-touch-icon" href="../images/branding/afrigadgets-favicon.png" />
+<title>Track Order | AfriGadgets</title>
+<link rel="stylesheet" href="../css/storefront/style.css" />
+<link rel="stylesheet" href="../css/storefront/pages/service-pages.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/storefront/theme.css" />
+  </head>
+<body>
+<div class="promo-bar"><div class="promo-track">
+<span>🏷️ 100% Authentic Products</span><span>🏷️ WhatsApp Support — We Respond in Minutes</span><span>🏷️ August to December Specials</span><span>🏷️ Nationwide Delivery</span><span>🏷️ Secure Shopping</span>
+<span>🏷️ 100% Authentic Products</span><span>🏷️ WhatsApp Support — We Respond in Minutes</span><span>🏷️ August to December Specials</span><span>🏷️ Nationwide Delivery</span><span>🏷️ Secure Shopping</span>
+</div></div>
+<header class="header"><div class="container header-content">
+<a href="/" class="logo">Afri<span>Gadgets</span></a>
+<div class="search-box"><input type="text" id="searchInput" placeholder="What are you looking for?" /><button type="button" onclick="searchProducts()"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+<div class="header-actions"><a href="/account" class="header-action"><i class="fa-regular fa-user"></i><span>Account</span></a><a href="/cart" class="header-action cart-button"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span><b id="cartCount">0</b></a></div>
+</div></header>
+<nav class="navigation"><div class="container nav-content">
+<a href="/" class="nav-link">Home</a>
+<div class="nav-dropdown"><a href="/shop" class="dropdown-trigger nav-link">Shop All <i class="fa-solid fa-chevron-down"></i></a><div class="dropdown-menu">
+<a href="/shop?category=cellphones"><i class="fa-solid fa-mobile-screen-button"></i>Cellphones</a>
+<a href="/shop?category=gadgets"><i class="fa-solid fa-headphones"></i>Gadgets</a>
+<a href="/shop?category=tv"><i class="fa-solid fa-tv"></i>Smart TVs</a>
+<a href="/shop?category=solar"><i class="fa-solid fa-solar-panel"></i>Solar</a>
+<a href="/shop?category=generators"><i class="fa-solid fa-bolt"></i>Generators</a>
+<a href="/shop?category=fridges"><i class="fa-solid fa-snowflake"></i>Fridges</a>
+<a href="/shop?category=audio"><i class="fa-solid fa-volume-high"></i>Audio</a>
+<a href="/shop?category=other"><i class="fa-solid fa-box"></i>Other</a>
+</div></div>
+<a href="/offers" class="nav-link">Offers</a><a href="/new" class="nav-link">New</a><a href="/faq" class="nav-link">FAQ</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a>
+</div></nav>
+<main>
+<section class="service-hero"><div class="container"><span class="eyebrow">ORDER SUPPORT</span><h1>Track Your Order</h1><p>Enter the payment reference from your order confirmation to find your order status.</p></div></section><section class="service-section"><div class="container"><div class="service-panel"><h2>Order reference</h2><p>Use the reference you received after submitting your order. For privacy, order details are only shown when the signed-in account is permitted to access them.</p><form id="trackOrderForm" class="service-form"><input id="trackReference" type="text" autocomplete="off" placeholder="e.g. AFRI-123456" required /><button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Check Status</button></form><div id="trackingResult"></div><div class="info-note" style="margin-top:18px">If you have not checked out yet, <a href="/shop">start shopping</a> first. If your reference is correct but no result appears, contact support.</div></div></div></section></main>
+<!-- FOOTER -->
+
+    <footer class="footer afri-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand" data-footer-reveal>
+      <a href="/" class="logo">Afri<span>Gadgets</span></a>
+      <p>Premium gadgets, electronics, smart technology and power solutions for everyday life.</p>
+
+      <div class="footer-bank-card">
+        <span class="footer-card-label">BANK DETAILS</span>
+        <div><span>Bank</span><strong>YOUR BANK NAME</strong></div>
+        <div><span>Account Holder</span><strong>AfriGadgets</strong></div>
+        <div><span>Account Type</span><strong>YOUR ACCOUNT TYPE</strong></div>
+        <div><span>Account No.</span><strong>0000000000</strong></div>
+        <div><span>Branch Code</span><strong>000000</strong></div>
+        <div><span>Reference</span><strong>Order Number</strong></div>
+      </div>
+    </div>
+
+    <div data-footer-reveal style="transition-delay: 0.1s">
+      <h3>SHOP</h3>
+      <a href="/shop">All Products</a>
+      <a href="/shop?category=cellphones">Cellphones</a>
+      <a href="/shop?category=gadgets">Gadgets</a>
+      <a href="/shop?category=tv">Smart TVs</a>
+      <a href="/shop?category=solar">Solar &amp; Power</a>
+      <a href="/offers">Special Offers</a>
+      <a href="/new">New Arrivals</a>
+    </div>
+
+    <div data-footer-reveal style="transition-delay: 0.2s">
+      <h3>SUPPORT</h3>
+      <a href="/track-order">Track My Order</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/delivery">Delivery Info</a>
+      <a href="/reviews">Reviews</a>
+      <a href="/about">About Us</a>
+
+      <h3 class="footer-subheading">POLICIES</h3>
+      <a href="/returns">Returns</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/returns">Refund Policy</a>
+      <a href="/faq">Terms &amp; Conditions</a>
+    </div>
+
+    <div data-footer-reveal style="transition-delay: 0.3s">
+      <h3>CONTACT US</h3>
+      <p><i class="fa-brands fa-whatsapp footer-contact-icon"></i> <strong>+27 65 572 3658</strong><br><span class="footer-muted">WhatsApp &amp; Calls</span></p>
+      <p><i class="fa-solid fa-envelope footer-contact-icon"></i> <strong>support@afrigadgets.co.za</strong></p>
+      <p><i class="fa-solid fa-location-dot footer-contact-icon"></i> <strong>South Africa</strong><br><span class="footer-muted">Nationwide service &amp; delivery</span></p>
+
+      <h3 class="footer-subheading">FOLLOW US</h3>
+      <div class="socials footer-socials" aria-label="Social media links">
+        <a href="#" aria-label="Instagram" title="Instagram placeholder"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok" title="TikTok placeholder"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="Facebook" title="Facebook placeholder"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="X" title="X placeholder"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+
+      <div class="footer-trust">
+        <span>SSL Secure</span>
+        <span>POPIA Compliant</span>
+        <span>Secure Payments</span>
+        <span>Nationwide Delivery</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© <span class="footer-year"></span> AfriGadgets. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/27655723658" target="_blank" class="floating-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/shared/auth-config.js"></script><script src="../js/shared/auth.js"></script><script src="../js/shared/products.js"></script><script src="../js/shared/main.js"></script><script src="../js/pages/track-order.js"></script><script src="../js/url-cleaner.js"></script>
+</body></html>

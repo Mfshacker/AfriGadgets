@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="icon" type="image/svg+xml" href="../images/branding/afrigadgets-favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/branding/afrigadgets-favicon.png" />
+    <link rel="apple-touch-icon" href="../images/branding/afrigadgets-favicon.png" />
+<title>Customers | AfriGadgets Admin</title>
+
+    <link rel="stylesheet" href="../css/admin/admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="admin-layout">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+        <div class="admin-logo">Afri<span>Gadgets</span></div>
+
+        <div class="admin-label">ADMIN PANEL</div>
+
+        <nav>
+          <a href="index.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="products.html">
+            <i class="fa-solid fa-box"></i>
+            <span>Products</span>
+          </a>
+
+          <a href="orders.html">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Orders</span>
+          </a>
+
+          <a href="customers.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+          </a>
+
+          <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="account.html">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>My Account</span>
+          </a>
+        </nav>
+
+        <a href="../index.html" class="view-store">
+          <i class="fa-solid fa-store"></i>
+          <span>View Store</span>
+        </a>
+
+        <div class="sidebar-toggle">
+          <button type="button" id="sidebarToggle" title="Collapse sidebar">
+            <i class="fa-solid fa-angles-left"></i>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="admin-main">
+        <!-- HEADER -->
+
+        <header class="admin-header">
+          <div class="admin-header-top">
+            <div>
+              <span> AFRIGADGETS ADMIN </span>
+
+              <h1>Customers</h1>
+            </div>
+
+            <div class="admin-user">
+              <button
+                type="button"
+                class="admin-user-trigger"
+                id="adminUserTrigger"
+              >
+                <div class="admin-avatar" id="adminAvatarLetter">A</div>
+
+                <div>
+                  <strong id="adminUserName"> Administrator </strong>
+
+                  <small> Admin </small>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="admin-user-menu">
+                <a href="account.html">
+                  <i class="fa-solid fa-user"></i>
+                  My Account
+                </a>
+
+                <a href="settings.html">
+                  <i class="fa-solid fa-gear"></i>
+                  Settings
+                </a>
+
+                <hr />
+
+                <button type="button" id="adminLogout">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-breadcrumb" id="adminBreadcrumb"></div>
+        </header>
+
+        <!-- CUSTOMERS -->
+
+        <section class="admin-section">
+          <div class="section-header">
+            <div>
+              <span> CUSTOMERS </span>
+
+              <h2>Customers</h2>
+            </div>
+
+            <button
+              type="button"
+              class="primary-button"
+              onclick="renderAdminCustomers()"
+            >
+              <i class="fa-solid fa-rotate"></i>
+
+              Refresh
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+
+                  <th>Email</th>
+
+                  <th>Phone</th>
+
+                  <th>Orders</th>
+
+                  <th>Total Spent</th>
+                </tr>
+              </thead>
+
+              <tbody id="customersTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- RADIAL QUICK-NAV -->
+
+    <div class="radial-fab" id="radialFab">
+      <button
+        type="button"
+        class="radial-fab-toggle"
+        aria-label="Quick navigation"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-compass"></i>
+      </button>
+
+      <div class="radial-fab-items">
+        <a href="index.html" class="radial-fab-item" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+
+        <a href="products.html" class="radial-fab-item" title="Products">
+          <i class="fa-solid fa-box"></i>
+        </a>
+
+        <a href="orders.html" class="radial-fab-item" title="Orders">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+        <a href="customers.html" class="radial-fab-item" title="Customers">
+          <i class="fa-solid fa-users"></i>
+        </a>
+
+        <a href="settings.html" class="radial-fab-item" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <a href="account.html" class="radial-fab-item" title="My Account">
+          <i class="fa-solid fa-user-gear"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Authentication runs before dashboard code. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="guard.js"></script>
+    <script src="shared.js"></script>
+    <script src="../js/shared/radial-fab.js"></script>
+    <script src="customers.js"></script>
+    <script src="../js/url-cleaner.js"></script>
+  </body>
+</html>

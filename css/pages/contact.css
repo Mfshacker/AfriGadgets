@@ -1,0 +1,902 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #e8bf3f;
+  --gold-light: #f1cf58;
+  --black: #080808;
+  --dark: #101010;
+  --card: #121212;
+  --border: #252525;
+  --text: #ffffff;
+  --muted: #8792a4;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--black);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* =========================================
+   PROMO BAR
+========================================= */
+
+.promo-bar {
+  height: 44px;
+  background: linear-gradient(90deg, #d8a91d, #f0ca4c, #d8a91d);
+
+  color: #111;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.promo-track {
+  display: flex;
+  align-items: center;
+
+  gap: 70px;
+
+  white-space: nowrap;
+
+  min-width: max-content;
+
+  animation: promoMove 35s linear infinite;
+}
+
+.promo-track span {
+  font-size: 12px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.promo-track i {
+  font-size: 10px;
+}
+
+@keyframes promoMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-40%);
+  }
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  height: 78px;
+
+  background: #090909;
+
+  border-bottom: 1px solid #1d1d1d;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1305px;
+
+  height: 100%;
+
+  margin: auto;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+/* BRAND */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  color: white;
+
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #333;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 800;
+
+  font-size: 16px;
+
+  border: 1px solid #ddd;
+}
+
+.brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.brand-text strong {
+  color: var(--gold);
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.brand-text small {
+  color: #626b78;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.main-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 29px;
+
+  margin-left: auto;
+}
+
+.main-nav > a,
+.nav-shop > button {
+  color: #a7aeba;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  background: none;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  transition: 0.2s ease;
+
+  white-space: nowrap;
+}
+
+.main-nav > a:hover,
+.nav-shop > button:hover,
+.main-nav .active {
+  color: white;
+}
+
+.main-nav .active {
+  color: var(--gold);
+
+  position: relative;
+}
+
+.main-nav .active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -18px;
+
+  left: 0;
+
+  right: 0;
+
+  height: 2px;
+
+  background: var(--gold);
+}
+
+.nav-shop {
+  position: relative;
+}
+
+.nav-shop button i {
+  font-size: 9px;
+}
+
+.offer-badge {
+  background: var(--gold);
+
+  color: #111;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  margin-left: 2px;
+}
+
+/* SHOP DROPDOWN */
+
+.shop-menu {
+  position: absolute;
+
+  top: 38px;
+
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-8px);
+
+  width: 210px;
+
+  background: #151515;
+
+  border: 1px solid #292929;
+
+  border-radius: 10px;
+
+  padding: 8px;
+
+  box-shadow: 0 20px 50px #000000;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition: 0.2s ease;
+}
+
+.shop-menu.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+.shop-menu a {
+  display: block;
+
+  padding: 11px 13px;
+
+  color: #b6becb;
+
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+}
+
+.shop-menu a:hover {
+  color: white;
+
+  background: #222;
+}
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.cart {
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #aab2bf;
+
+  text-decoration: none;
+
+  position: relative;
+}
+
+.cart span {
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+  width: 19px;
+
+  height: 19px;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  color: #111;
+
+  font-size: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 800;
+}
+
+.whatsapp-button {
+  background: var(--gold);
+
+  color: #111;
+
+  text-decoration: none;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  box-shadow: 0 8px 25px #e8bf3f;
+}
+
+.track-button {
+  border: 1px solid #8d711d;
+
+  color: var(--gold);
+
+  text-decoration: none;
+
+  padding: 11px 17px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-page {
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 85px 25px 80px;
+}
+
+/* INTRO */
+
+.contact-intro {
+  text-align: center;
+
+  max-width: 760px;
+
+  margin: 0 auto 65px;
+}
+
+.eyebrow {
+  color: var(--gold);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  display: block;
+
+  margin-bottom: 20px;
+}
+
+.contact-intro h1 {
+  font-size: 52px;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+
+  margin-bottom: 23px;
+}
+
+.contact-intro h1 span {
+  color: var(--gold);
+}
+
+.contact-intro p {
+  color: #91a0b5;
+
+  font-size: 18px;
+
+  line-height: 1.65;
+}
+
+/* =========================================
+   CONTACT GRID
+========================================= */
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1.12fr;
+
+  gap: 40px;
+
+  align-items: start;
+}
+
+/* =========================================
+   CONTACT CARDS
+========================================= */
+
+.contact-left {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.contact-card {
+  min-height: 108px;
+
+  background: #121212;
+
+  border: 1px solid #252525;
+
+  border-radius: 16px;
+
+  padding: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+.contact-icon {
+  width: 44px;
+
+  height: 44px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: #292612;
+
+  color: var(--gold);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 17px;
+}
+
+.contact-card > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.contact-card span {
+  color: #68758a;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+}
+
+.contact-card strong {
+  color: white;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+}
+
+.contact-card small {
+  color: #4f5c70;
+
+  font-size: 12px;
+}
+
+/* RESPONSE */
+
+.response-card {
+  border: 1px solid #4b3c15;
+
+  border-radius: 16px;
+
+  padding: 22px;
+
+  background: #121212;
+
+  margin-top: 2px;
+}
+
+.response-card h3 {
+  font-size: 16px;
+
+  margin-bottom: 12px;
+}
+
+.response-card p {
+  color: #8290a4;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin-bottom: 17px;
+}
+
+.whatsapp-large {
+  width: 100%;
+
+  height: 54px;
+
+  border-radius: 11px;
+
+  background: linear-gradient(180deg, #f0cc52, #dfb738);
+
+  color: #111;
+
+  text-decoration: none;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  box-shadow: 0 8px 25px #e8bf3f;
+}
+
+/* =========================================
+   MESSAGE FORM
+========================================= */
+
+.message-card {
+  background: #121212;
+
+  border: 1px solid #252525;
+
+  border-radius: 17px;
+
+  padding: 32px;
+}
+
+.message-card h2 {
+  font-size: 19px;
+
+  margin-bottom: 22px;
+}
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 17px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  color: #aeb8c7;
+
+  font-size: 13px;
+
+  margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  background: #090909;
+
+  border: 1px solid #2b2b2b;
+
+  color: white;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 50px;
+
+  padding: 0 15px;
+}
+
+.form-group textarea {
+  height: 135px;
+
+  padding: 15px;
+
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #4d5b70;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group select {
+  appearance: auto;
+}
+
+.send-button {
+  width: 100%;
+
+  height: 55px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: linear-gradient(180deg, #f0cc52, #dfb738);
+
+  color: #111;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 30px #e8bf3f;
+
+  transition: 0.2s ease;
+}
+
+.send-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 12px 35px #e8bf3f;
+}
+
+/* =========================================
+   FLOATING WHATSAPP
+========================================= */
+
+.floating-whatsapp {
+  position: fixed;
+
+  right: 27px;
+
+  bottom: 35px;
+
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 50%;
+
+  background: #25d366;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  font-size: 29px;
+
+  box-shadow: 0 8px 30px #25d366;
+
+  z-index: 2000;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .main-nav {
+    gap: 15px;
+  }
+
+  .header-actions .track-button {
+    display: none;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: auto;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .whatsapp-button {
+    padding: 10px 12px;
+  }
+
+  .contact-page {
+    padding-top: 55px;
+  }
+
+  .contact-intro h1 {
+    font-size: 40px;
+  }
+
+  .contact-intro p {
+    font-size: 15px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .message-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 500px) {
+  .brand-text {
+    display: none;
+  }
+
+  .header-actions .whatsapp-button {
+    font-size: 0;
+  }
+
+  .header-actions .whatsapp-button i {
+    font-size: 18px;
+  }
+
+  .main-nav {
+    gap: 22px;
+  }
+
+  .main-nav > a,
+  .nav-shop > button {
+    font-size: 12px;
+  }
+
+  .contact-intro h1 {
+    font-size: 34px;
+  }
+
+  .floating-whatsapp {
+    right: 18px;
+    bottom: 20px;
+  }
+}

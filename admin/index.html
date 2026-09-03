@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="icon" type="image/svg+xml" href="../images/branding/afrigadgets-favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/branding/afrigadgets-favicon.png" />
+    <link rel="apple-touch-icon" href="../images/branding/afrigadgets-favicon.png" />
+<title>Dashboard | AfriGadgets Admin</title>
+
+    <link rel="stylesheet" href="../css/admin/admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="admin-layout">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+        <div class="admin-logo">Afri<span>Gadgets</span></div>
+
+        <div class="admin-label">ADMIN PANEL</div>
+
+        <nav>
+          <a href="index.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="products.html">
+            <i class="fa-solid fa-box"></i>
+            <span>Products</span>
+          </a>
+
+          <a href="orders.html">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Orders</span>
+          </a>
+
+          <a href="customers.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+          </a>
+
+          <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="account.html">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>My Account</span>
+          </a>
+        </nav>
+
+        <a href="../index.html" class="view-store">
+          <i class="fa-solid fa-store"></i>
+          <span>View Store</span>
+        </a>
+
+        <div class="sidebar-toggle">
+          <button type="button" id="sidebarToggle" title="Collapse sidebar">
+            <i class="fa-solid fa-angles-left"></i>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="admin-main">
+        <!-- HEADER -->
+
+        <header class="admin-header">
+          <div class="admin-header-top">
+            <div>
+              <span> AFRIGADGETS ADMIN </span>
+
+              <h1>Dashboard</h1>
+            </div>
+
+            <div class="admin-user">
+              <button
+                type="button"
+                class="admin-user-trigger"
+                id="adminUserTrigger"
+              >
+                <div class="admin-avatar" id="adminAvatarLetter">A</div>
+
+                <div>
+                  <strong id="adminUserName"> Administrator </strong>
+
+                  <small> Admin </small>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="admin-user-menu">
+                <a href="account.html">
+                  <i class="fa-solid fa-user"></i>
+                  My Account
+                </a>
+
+                <a href="settings.html">
+                  <i class="fa-solid fa-gear"></i>
+                  Settings
+                </a>
+
+                <hr />
+
+                <button type="button" id="adminLogout">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-breadcrumb" id="adminBreadcrumb"></div>
+        </header>
+
+        <!-- DASHBOARD -->
+
+        <section class="stats-grid">
+          <div class="stat-card accent-primary">
+            <div class="stat-card-top">
+              <div class="stat-icon">
+                <i class="fa-solid fa-box"></i>
+              </div>
+
+              <div>
+                <span> Products </span>
+
+                <strong id="productCount"> 0 </strong>
+              </div>
+            </div>
+
+            <div class="stat-sparkline">
+              <canvas id="productSparkline"></canvas>
+            </div>
+          </div>
+
+          <div class="stat-card accent-info">
+            <div class="stat-card-top">
+              <div class="stat-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+
+              <div>
+                <span> Orders </span>
+
+                <strong id="orderCount"> 0 </strong>
+              </div>
+            </div>
+
+            <div class="stat-sparkline">
+              <canvas id="orderSparkline"></canvas>
+            </div>
+          </div>
+
+          <div class="stat-card accent-warning">
+            <div class="stat-card-top">
+              <div class="stat-icon">
+                <i class="fa-solid fa-money-bill-wave"></i>
+              </div>
+
+              <div>
+                <span> Revenue </span>
+
+                <strong id="revenue"> R0.00 </strong>
+              </div>
+            </div>
+
+            <div class="stat-sparkline">
+              <canvas id="revenueSparkline"></canvas>
+            </div>
+          </div>
+
+          <div class="stat-card accent-danger">
+            <div class="stat-card-top">
+              <div class="stat-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+
+              <div>
+                <span> Customers </span>
+
+                <strong id="customerCount"> 0 </strong>
+              </div>
+            </div>
+
+            <div class="stat-sparkline">
+              <canvas id="customerSparkline"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- SALES TREND -->
+
+        <section class="admin-section">
+          <div class="section-header">
+            <div>
+              <span> ANALYTICS </span>
+
+              <h2 id="salesTrendTitle">Orders &amp; Revenue &mdash; Last 30 Days</h2>
+            </div>
+
+            <div class="period-toggle" id="trendPeriodToggle">
+              <button type="button" data-days="7">7D</button>
+              <button type="button" data-days="30" class="active">30D</button>
+              <button type="button" data-days="90">90D</button>
+            </div>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="salesTrendChart"></canvas>
+          </div>
+        </section>
+
+        <!-- STORE ACTIVITY -->
+
+        <section class="admin-section">
+          <div class="section-header">
+            <div>
+              <span> OVERVIEW </span>
+
+              <h2>Store Activity</h2>
+            </div>
+          </div>
+
+          <div class="activity-grid">
+            <div class="activity-col">
+              <div class="week-compare">
+                <div class="week-compare-item">
+                  <div class="week-compare-label">Orders This Week</div>
+
+                  <div class="week-compare-value" id="ordersThisWeek">0</div>
+
+                  <div class="week-compare-delta" id="ordersDelta">vs last week: &mdash;</div>
+                </div>
+
+                <div class="week-compare-item">
+                  <div class="week-compare-label">Revenue This Week</div>
+
+                  <div class="week-compare-value" id="revenueThisWeek">R0.00</div>
+
+                  <div class="week-compare-delta" id="revenueDelta">vs last week: &mdash;</div>
+                </div>
+              </div>
+
+              <div class="mini-progress-list">
+                <div class="mini-progress-row">
+                  <div class="mini-progress-top">
+                    <span>Products In Stock</span>
+
+                    <strong id="inStockPercent">0%</strong>
+                  </div>
+
+                  <div class="mini-progress-track">
+                    <div class="mini-progress-fill mini-progress-info" id="inStockBar"></div>
+                  </div>
+                </div>
+
+                <div class="mini-progress-row">
+                  <div class="mini-progress-top">
+                    <span>Low Stock (below 10 units)</span>
+
+                    <strong id="lowStockPercent">0%</strong>
+                  </div>
+
+                  <div class="mini-progress-track">
+                    <div class="mini-progress-fill mini-progress-warning" id="lowStockBar"></div>
+                  </div>
+                </div>
+
+                <div class="mini-progress-row">
+                  <div class="mini-progress-top">
+                    <span>Out of Stock</span>
+
+                    <strong id="outOfStockPercent">0%</strong>
+                  </div>
+
+                  <div class="mini-progress-track">
+                    <div class="mini-progress-fill mini-progress-danger" id="outOfStockBar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="activity-col">
+              <div class="donut-wrap">
+                <canvas id="orderStatusDonut"></canvas>
+              </div>
+
+              <div class="donut-legend" id="orderStatusLegend"></div>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order</th>
+
+                  <th>Customer</th>
+
+                  <th>Total</th>
+
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="recentOrdersTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- RADIAL QUICK-NAV -->
+
+    <div class="radial-fab" id="radialFab">
+      <button
+        type="button"
+        class="radial-fab-toggle"
+        aria-label="Quick navigation"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-compass"></i>
+      </button>
+
+      <div class="radial-fab-items">
+        <a href="index.html" class="radial-fab-item" title="Dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+        </a>
+
+        <a href="products.html" class="radial-fab-item" title="Products">
+          <i class="fa-solid fa-box"></i>
+        </a>
+
+        <a href="orders.html" class="radial-fab-item" title="Orders">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+        <a href="customers.html" class="radial-fab-item" title="Customers">
+          <i class="fa-solid fa-users"></i>
+        </a>
+
+        <a href="settings.html" class="radial-fab-item" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <a href="account.html" class="radial-fab-item" title="My Account">
+          <i class="fa-solid fa-user-gear"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Authentication runs before dashboard code. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="guard.js"></script>
+    <script src="shared.js"></script>
+    <script src="../js/shared/radial-fab.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="../js/url-cleaner.js"></script>
+  </body>
+</html>

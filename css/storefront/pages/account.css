@@ -1,0 +1,182 @@
+/* LOGIN / SIGNUP / ACCOUNT */
+
+.account-main {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  padding: 50px 20px;
+}
+
+.account-card {
+  width: min(100%, 420px);
+  padding: 36px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 18px 50px #000000;
+}
+
+.account-stack {
+  width: min(100%, 720px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.account-stack .account-card {
+  width: 100%;
+}
+
+.account-card input:disabled {
+  background: var(--light);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.account-label {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.account-card h1 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 28px;
+}
+
+.account-copy {
+  margin: 8px 0 26px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.account-card label {
+  display: block;
+  margin: 16px 0 6px;
+  color: var(--dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.account-card input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--dark);
+  font: inherit;
+}
+
+.account-card input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.account-card .btn {
+  width: 100%;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.account-message {
+  min-height: 18px;
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+
+.account-message.error {
+  color: #f87171;
+}
+
+.account-message.success {
+  color: var(--primary-dark);
+}
+
+.account-switch {
+  display: block;
+  margin-top: 22px;
+  color: var(--primary);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ORDER HISTORY */
+
+.account-orders {
+  width: min(100%, 720px);
+}
+
+.account-orders .empty-state {
+  padding: 40px 10px;
+  text-align: center;
+}
+
+.account-orders .empty-state i {
+  font-size: 32px;
+  color: var(--border);
+  margin-bottom: 12px;
+}
+
+.account-orders .empty-state h3 {
+  color: var(--dark);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.account-orders .empty-state p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.account-order {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.account-order-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.account-order-reference {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.account-order-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: var(--light);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.account-order-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text);
+  padding: 4px 0;
+}
+
+.account-order-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-weight: 700;
+  color: var(--dark);
+}
