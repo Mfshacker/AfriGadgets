@@ -61,6 +61,54 @@ const PRODUCT_IMAGE_POOLS = {
     "IMG-20260902-WA0045.jpg",
     "IMG-20260902-WA0051.jpg",
   ],
+  laptops: [
+    "cbvscvacv.png",
+    "IMG-20260902-WA0013.jpg",
+    "IMG-20260902-WA0075.jpg",
+    "IMG-20260902-WA0067.jpg",
+  ],
+  gaming: [
+    "24-inch.png",
+    "wert.png",
+    "dfgafd.png",
+    "IMG-20260902-WA0068.jpg",
+  ],
+  kitchen: [
+    "IMG-20260902-WA0065.jpg",
+    "IMG-20260902-WA0046.jpg",
+    "IMG-20260902-WA0048.jpg",
+    "IMG-20260902-WA0072.jpg",
+  ],
+  "electric-cars": [
+    "IMG-20260902-WA0076.jpg",
+    "IMG-20260902-WA0077.jpg",
+    "IMG-20260902-WA0028.jpg",
+    "IMG-20260902-WA0029.jpg",
+  ],
+  tablets: [
+    "cbvscvacv.png",
+    "IMG-20260902-WA0074.jpg",
+    "IMG-20260902-WA0013.jpg",
+    "IMG-20260902-WA0075.jpg",
+  ],
+  wearables: [
+    "IMG-20260902-WA0045.jpg",
+    "IMG-20260902-WA0054.jpg",
+    "IMG-20260902-WA0052.jpg",
+    "IMG-20260902-WA0072.jpg",
+  ],
+  networking: [
+    "IMG-20260902-WA0082.jpg",
+    "IMG-20260902-WA0083.jpg",
+    "IMG-20260902-WA0085.jpg",
+    "IMG-20260902-WA0089.jpg",
+  ],
+  "smart-home": [
+    "IMG-20260902-WA0072.jpg",
+    "IMG-20260902-WA0074.jpg",
+    "IMG-20260902-WA0085.jpg",
+    "IMG-20260902-WA0076.jpg",
+  ],
   other: [
     "IMG-20260902-WA0076.jpg",
     "IMG-20260902-WA0077.jpg",
@@ -88,6 +136,15 @@ const PRODUCT_IMAGE_KEYWORDS = [
   [["ring light"], "IMG-20260902-WA0028.jpg"],
   [["tripod", "gimbal"], "IMG-20260902-WA0029.jpg"],
   [["usb", "flash drive", "memory"], "IMG-20260902-WA0080.jpg"],
+  [["laptop", "notebook", "macbook", "chromebook"], "cbvscvacv.png"],
+  [["gaming pc", "gaming computer", "gaming desktop"], "IMG-20260902-WA0013.jpg"],
+  [["gaming monitor", "gaming screen"], "24-inch.png"],
+  [["gaming keyboard", "gaming mouse", "controller", "console"], "dfgafd.png"],
+  [["air fryer", "kitchen", "microwave", "blender", "kettle", "toaster", "coffee machine"], "IMG-20260902-WA0065.jpg"],
+  [["electric car", "ev ", "electric vehicle"], "IMG-20260902-WA0076.jpg"],
+  [["tablet", "ipad"], "cbvscvacv.png"],
+  [["smartwatch", "fitness band", "smart band"], "IMG-20260902-WA0045.jpg"],
+  [["router", "wifi", "network switch", "access point"], "IMG-20260902-WA0083.jpg"],
 ];
 
 function resolveProductImage(product) {

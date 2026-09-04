@@ -114,6 +114,13 @@ document.addEventListener("DOMContentLoaded", function () {
     generators: "Generators",
     fridges: "Fridges",
     audio: "Audio",
+    laptops: "Laptops",
+    gaming: "Gaming",
+    kitchen: "Kitchen Appliances",
+    "electric-cars": "Electric Cars",
+    tablets: "Tablets",
+    wearables: "Wearables",
+    networking: "Networking",
     other: "Other",
   };
   if (category && categoryNames[category]) {

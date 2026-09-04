@@ -108,6 +108,8 @@ function renderShopProducts() {
                 >
                     Add to Cart
                 </button>
+
+                ${typeof installmentButtonHTML === "function" ? installmentButtonHTML(product) : ""}
             </div>
         `;
 
