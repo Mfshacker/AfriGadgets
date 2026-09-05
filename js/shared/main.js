@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
-  const navLinks = document.querySelectorAll(".navigation.nav-link, .nav-link");
+  const navLinks = document.querySelectorAll(".navigation .nav-link, .nav-link");
   const shopDropdown = document.querySelector(".nav-dropdown");
   navLinks.forEach(function (link) {
     const href = link.getAttribute("href");

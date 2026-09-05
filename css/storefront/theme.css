@@ -48,9 +48,28 @@ html, body { background: #000 !important; color: #fff !important; }
 .dropdown-menu a i, .dropdown-menu i { color: #e8bf3f !important; }
 
 /* Remove irritating active-page highlight lines. */
+/* Active page indicator: the current top-level page gets a gold underline. */
 .navigation .nav-link.active::after,
-.navigation .nav-dropdown.active > .dropdown-trigger::after,
-.main-nav .active::after { display: none !important; }
+.navigation .nav-dropdown.active > .dropdown-trigger::after {
+  display: block !important;
+}
+
+.navigation .nav-link.active::after,
+.navigation .nav-dropdown.active > .dropdown-trigger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #e8bf3f !important;
+  border-radius: 2px;
+}
+
+/* Keep legacy .main-nav pages compatible without forcing an underline on unrelated controls. */
+.main-nav .active::after {
+  display: block;
+}
 
 /* Solid content surfaces */
 .hero, .service-hero, .page-banner { background: #000 !important; }
