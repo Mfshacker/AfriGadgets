@@ -254,8 +254,46 @@ function formatZAR(value) {
   });
 }
 
+// Installments are intended for larger-ticket products.
+// Small accessories / low-ticket gadgets such as kettles, earphones,
+// chargers and cables are excluded even when an admin gives them a price
+// above the normal minimum. Larger appliances and electronics remain eligible.
+const INSTALLMENT_EXCLUDED_KEYWORDS = [
+  "kettle",
+  "earphone",
+  "earbud",
+  "headphone",
+  "charger",
+  "charging cable",
+  "usb cable",
+  "cable",
+  "adapter",
+  "mouse",
+  "keyboard",
+  "flash drive",
+  "memory card",
+  "hub",
+  "phone case",
+  "smartphone case",
+  "tablet case",
+  "cover",
+  "stylus",
+  "screen protector",
+  "remote control",
+  "extension lead",
+  "extension cable",
+  "card reader"
+];
+
+function isInstallmentExcluded(product) {
+  const name = String(product?.name || "").toLowerCase().trim();
+  const category = String(product?.category || "").toLowerCase().trim();
+  return INSTALLMENT_EXCLUDED_KEYWORDS.some((keyword) => name.includes(keyword))
+    || ["accessories", "audio-accessories"].includes(category);
+}
+
 function isInstallmentEligible(product) {
-  return Number(product?.price) >= INSTALLMENT_DEPOSIT;
+  return Number(product?.price) >= INSTALLMENT_DEPOSIT && !isInstallmentExcluded(product);
 }
 
 function installmentButtonHTML(product) {
