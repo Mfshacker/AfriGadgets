@@ -432,6 +432,7 @@ function createProductCard(product) {
             >
 
                 ${imageHTML}
+                ${hasOffer ? `<span class="product-offer-badge">${discountPercent}% OFF</span>` : ""}
 
             </a>
 
@@ -455,7 +456,6 @@ function createProductCard(product) {
                 <strong class="product-price" ${hasOffer ? 'style="color:#d4af37;"' : ''}>
                     ${hasOffer ? `<span style="text-decoration:line-through;opacity:.55;font-size:.8em;margin-right:8px;">R${regularPrice.toLocaleString("en-ZA", {minimumFractionDigits:2, maximumFractionDigits:2})}</span>` : ""}
                     R${formattedPrice}
-                    ${hasOffer ? `<span style="display:inline-block;margin-left:8px;padding:3px 7px;border-radius:999px;background:#d4af37;color:#111;font-size:11px;font-weight:800;vertical-align:middle;">${discountPercent}% OFF</span>` : ""}
                 </strong>
 
 
