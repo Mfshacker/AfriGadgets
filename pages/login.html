@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="icon" type="image/svg+xml" href="../images/branding/afrigadgets-favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/branding/afrigadgets-favicon.png" />
+    <link rel="apple-touch-icon" href="../images/branding/afrigadgets-favicon.png" />
+<title>Sign In | AfriGadgets</title>
+
+    <link rel="stylesheet" href="../css/storefront/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+      <link rel="stylesheet" href="../css/storefront/theme.css" />
+  </head>
+
+  <body>
+    <header class="checkout-header">
+      <div class="container checkout-header-content">
+        <a href="/" class="logo"> Afri<span>Gadgets</span> </a>
+
+        <div class="checkout-secure">
+          <i class="fa-solid fa-lock"></i>
+          Secure Sign In
+        </div>
+      </div>
+    </header>
+
+    <main class="account-main">
+      <div class="account-card">
+        <p class="account-label">AFRIGADGETS</p>
+        <h1>Sign in</h1>
+        <p class="account-copy">Sign in to your account to check out and view your orders.</p>
+
+        <form id="loginForm" novalidate>
+          <label for="loginEmail">Email address</label>
+          <input
+            id="loginEmail"
+            name="email"
+            type="email"
+            autocomplete="username"
+            required
+          />
+
+          <label for="loginPassword">Password</label>
+          <input
+            id="loginPassword"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+
+          <p id="loginMessage" class="account-message" role="alert"></p>
+
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+
+        <a href="/signup" class="account-switch">
+          New here? Create an account
+        </a>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/auth-config.js"></script>
+    <script src="../js/shared/auth.js"></script>
+    <script src="../js/shared/main.js"></script>
+    <script src="../js/pages/login.js"></script>
+    <script src="../js/url-cleaner.js"></script>
+  </body>
+</html>
