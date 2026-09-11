@@ -796,12 +796,23 @@
 }
 
 .socials a {
-  width: 35px;
-  height: 35px;
+  width: 44px;
+  height: 44px;
   border: 1px solid #374151;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  font-size: 18px;
+}
+
+.socials a i {
+  display: block;
+  line-height: 1;
+  margin: 0;
 }
 
 .footer h3 {
