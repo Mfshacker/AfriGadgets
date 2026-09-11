@@ -1748,3 +1748,89 @@ section {
         z-index: 1 !important;
     }
 }
+
+/* =========================================================
+   AFRIGADGETS FOOTER SOCIAL ICONS - FINAL ALIGNMENT
+   ========================================================= */
+
+.afri-footer .footer-socials {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  margin-top: 12px !important;
+  padding: 0 !important;
+}
+
+.afri-footer .footer-socials a {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 1px solid #374151 !important;
+  border-radius: 50% !important;
+
+  background: transparent !important;
+  color: #ffffff !important;
+
+  line-height: 1 !important;
+  font-size: 17px !important;
+  text-decoration: none !important;
+
+  overflow: hidden !important;
+}
+
+.afri-footer .footer-socials a i,
+.afri-footer .footer-socials a .fa-brands,
+.afri-footer .footer-socials a svg {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  line-height: 1 !important;
+  font-size: 17px !important;
+  vertical-align: middle !important;
+}
+
+/* Hover */
+.afri-footer .footer-socials a:hover {
+  color: #d4af37 !important;
+  border-color: #d4af37 !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .afri-footer .footer-socials {
+    gap: 8px !important;
+  }
+
+  .afri-footer .footer-socials a {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    font-size: 16px !important;
+  }
+
+  .afri-footer .footer-socials a i,
+  .afri-footer .footer-socials a .fa-brands,
+  .afri-footer .footer-socials a svg {
+    font-size: 16px !important;
+  }
+}
