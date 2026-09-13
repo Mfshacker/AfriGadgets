@@ -1839,3 +1839,21 @@ section {
         0 0 0 2px #FFD700,
         0 0 18px rgba(255, 215, 0, 0.45);
 }
+
+.terms-agreement {
+  margin: 16px 0 10px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #aaa;
+}
+
+.terms-agreement a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms-agreement a:hover {
+  text-decoration: underline;
+}
