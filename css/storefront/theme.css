@@ -441,3 +441,5 @@ html, body {
 }
 
 @media (max-width: 600px) { .installment-terms { grid-template-columns: repeat(2,1fr); } }
+
+

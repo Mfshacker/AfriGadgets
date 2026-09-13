@@ -1823,3 +1823,19 @@ section {
     font-size: 16px !important;
   }
 }
+
+/* Product card hover effect */
+.product-card {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #FFD700;
+    box-shadow:
+        0 0 0 2px #FFD700,
+        0 0 18px rgba(255, 215, 0, 0.45);
+}
