@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfriGadgets</title>
+</head>
+<body>
+<script>
+(function () {
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+  const query = window.location.search;
+  const hash = window.location.hash;
+
+  const pages = {
+    "about":"about", "account":"account", "cart":"cart", "checkout":"checkout",
+    "contact":"contact", "delivery":"delivery", "faq":"faq", "login":"login",
+    "new":"new", "offers":"offers", "order-success":"order-success", "privacy":"privacy",
+    "product":"product", "returns":"returns", "reviews":"reviews", "shop":"shop",
+    "signup":"signup", "track-order":"track-order"
+  };
+
+  if (pages[path]) {
+    window.location.replace(`/pages/${pages[path]}.html${query}${hash}`);
+    return;
+  }
+
+  document.body.innerHTML = `
+    <div style="background:#000;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;text-align:center">
+      <div><h1 style="color:#D4AF37">404</h1><p>Page not found.</p><a href="/" style="color:#D4AF37">Return to AfriGadgets</a></div>
+    </div>`;
+})();
+</script>
+</body>
+</html>
