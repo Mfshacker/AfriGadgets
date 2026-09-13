@@ -1866,7 +1866,7 @@ section {
 
 .delivery-timeframes {
   max-width: 950px;
-  margin: 42px auto;
+  margin: 42px 0 42px 20px;
   background: #111111;
   border: 1px solid #2b2b2b;
   border-radius: 16px;
