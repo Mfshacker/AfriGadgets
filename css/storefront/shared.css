@@ -1858,164 +1858,116 @@ section {
   text-decoration: underline;
 }
 
-/* Delivery Timeframes */
-.delivery-timeframes {
-  max-width: 950px;
-  margin: 50px auto;
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.delivery-timeframes h2 {
-  margin: 0;
-  padding: 25px;
-  color: #fff;
-  font-size: 22px;
-  border-bottom: 1px solid #222;
-}
-
-.delivery-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 28px;
-  border-bottom: 1px solid #222;
-  gap: 20px;
-}
-
-.delivery-row:last-child {
-  border-bottom: none;
-}
-
-.delivery-location {
-  color: #f5f5f5;
-  font-size: 16px;
-}
-
-.delivery-location i {
-  color: #888;
-  margin-right: 12px;
-}
-
-.delivery-time {
-  color: #ffd700;
-  font-weight: 600;
-  text-align: right;
-  font-size: 16px;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .delivery-timeframes {
-    margin: 30px 15px;
-    border-radius: 12px;
-  }
-
-  .delivery-timeframes h2 {
-    padding: 20px;
-    font-size: 20px;
-  }
-
-  .delivery-row {
-    padding: 17px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .delivery-time {
-    text-align: left;
-    padding-left: 27px;
-  }
-}
 
 /* =========================================
    DELIVERY TIMEFRAMES
+   Matches the HTML classes used in delivery.html
 ========================================= */
 
 .delivery-timeframes {
   max-width: 950px;
   margin: 42px auto;
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: #111111;
+  border: 1px solid #2b2b2b;
   border-radius: 16px;
   overflow: hidden;
 }
 
-.delivery-timeframes h2 {
-  margin: 0;
+.delivery-timeframes-header {
   padding: 26px 28px;
-  color: var(--dark);
-  font-size: 26px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #2b2b2b;
 }
 
-.delivery-row {
+.delivery-timeframes-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1.3;
+}
+
+.delivery-timeframe-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 58px;
   padding: 16px 28px;
-  border-bottom: 1px solid var(--border);
   gap: 25px;
+  border-bottom: 1px solid #2b2b2b;
 }
 
-.delivery-row:last-child {
+.delivery-timeframe-row:last-child {
   border-bottom: none;
 }
 
-.delivery-location {
+.delivery-area {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--dark);
+  min-width: 0;
+  color: #ffffff;
   font-size: 15px;
   font-weight: 500;
 }
 
-.delivery-location i {
+.delivery-area i {
+  flex: 0 0 20px;
   width: 20px;
-  color: var(--muted);
+  color: #888888;
   text-align: center;
 }
 
-.delivery-time {
-  color: var(--primary);
+.delivery-timeframe-row > strong {
+  color: #e8bf3f;
   font-size: 15px;
   font-weight: 800;
+  line-height: 1.4;
   text-align: right;
   white-space: nowrap;
 }
 
-
 /* Mobile */
 @media (max-width: 600px) {
-
   .delivery-timeframes {
     margin: 30px 15px;
     border-radius: 13px;
   }
 
-  .delivery-timeframes h2 {
+  .delivery-timeframes-header {
     padding: 21px;
+  }
+
+  .delivery-timeframes-header h2 {
     font-size: 21px;
   }
 
-  .delivery-row {
+  .delivery-timeframe-row {
     min-height: auto;
     padding: 17px 20px;
-    align-items: flex-start;
     gap: 8px;
   }
 
-  .delivery-location {
+  .delivery-area {
     font-size: 14px;
   }
 
-  .delivery-time {
+  .delivery-timeframe-row > strong {
     font-size: 14px;
     text-align: right;
   }
 }
+
+@media (max-width: 480px) {
+  .delivery-timeframe-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .delivery-timeframe-row > strong {
+    padding-left: 32px;
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+
