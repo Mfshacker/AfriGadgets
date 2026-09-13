@@ -1,1 +1,20 @@
+User-agent: *
+Allow: /
 
+# Keep private/account and implementation URLs out of search.
+Disallow: /admin/
+Disallow: /pages/
+Disallow: /login
+Disallow: /signup
+Disallow: /account
+Disallow: /cart
+Disallow: /checkout
+Disallow: /order-success
+Disallow: /track-order
+
+# Documentation/development material is not public site content.
+Disallow: /Documentions/
+Disallow: /docs/
+Disallow: /tests/
+
+Sitemap: https://afrigadgets.co.za/sitemap.xml
